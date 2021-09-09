@@ -176,9 +176,8 @@ class Datasiswa extends CI_Controller
             redirect('Datasiswa');
         }
     }
-    public function delete()
+    public function delete($id)
     {
-
         $this->form_validation->set_rules(
             'id',
             'ID',
@@ -245,8 +244,7 @@ class Datasiswa extends CI_Controller
             ]
         );
         if ($this->form_validation->run() == FALSE) {
-            $data['siswa'] = $this->Datasiswa_model->getById($_POST['id_siswa']);
-
+            $data['siswa'] = $this->Datasiswa_model->getById($id);
             // var_dump($data['siswa']);
             // die;
             $data['title'] = 'Data Siswa';
@@ -257,6 +255,9 @@ class Datasiswa extends CI_Controller
             $this->load->view('layout/header');
         } else {
             $this->Datasiswa_model->delete();
+            // var_dump($this->db->last_query());
+            // die;
+            $this->session->flashdata('siswa', 'Dihapus');
             redirect('Datasiswa');
         }
     }

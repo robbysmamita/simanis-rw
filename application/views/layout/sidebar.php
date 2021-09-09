@@ -4,9 +4,9 @@
     <div class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
-            <div class="image text-center"><img src="<?= base_url('assets') ?>/img/img1.jpg" class="img-circle" alt="User Image"> </div>
+            <div class="image text-center"><img src="<?= base_url('assets') ?>/img/profil1.jpg" class="img-circle" alt="User Image"> </div>
             <div class="info">
-                <p>Alexander Pierce</p>
+                <p>Zulfikar Rofi</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -14,13 +14,13 @@
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">PERSONAL</li>
-            <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Akademis</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-angle-right"></i> Modern</a></li>
-                    <li><a href="index-crm.html"><i class="fa fa-angle-right"></i> CRM</a></li>
-                    <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i> Analytics</a></li>
-                    <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Ecommerce</a></li>
-                    <li><a href="index-medical.html"><i class="fa fa-angle-right"></i> Medical</a></li>
+                    <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
+                    <li><a href="index-crm.html"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
+                    <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="index-ecommerce.html"><i class="fa fa-angle-right"></i> Data Guru</a></li>
+                    <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i> Data Siswa</a></li>
                 </ul>
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Apps</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -59,7 +59,7 @@
                     <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
                 </ul>
             </li>
-            <li class="header">FORMS, TABLE & WIDGETS</li>
+            <!-- <li class="header">FORMS, TABLE & WIDGETS</li>
             <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="form-elements.html"><i class="fa fa-angle-right"></i> Form Elements</a></li>
@@ -131,7 +131,7 @@
                     <li><a href="icon-simple-lineicon.html"><i class="fa fa-angle-right"></i> Simple Lineicons</a></li>
                     <li><a href="icon-flag.html"><i class="fa fa-angle-right"></i> Flag Icons</a></li>
                 </ul>
-            </li>
+            </li> -->
             <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
@@ -150,6 +150,7 @@
                 </ul>
             </li>
         </ul>
+        <li><a href="#" class="badge badge-danger">Log Out</a></li>
     </div>
     <!-- /.sidebar -->
 </aside>

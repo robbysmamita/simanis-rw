@@ -18,9 +18,9 @@
         <?php endif ?>
         <div class="card">
             <div class="card-body">
-                <h4 class="text-black">Data Kelas</h4>
+                <h4 class="text-black">Data Siswa</h4>
                 <p>Data Kelas</p>
-                <a href="<?= base_url('Datasiswa/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('Datasiswa/tambah') ?>" class="btn btn-success">Add</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
@@ -33,6 +33,7 @@
                                 <th>Email</th>
                                 <th>No Telpon</th>
                                 <th> No Telepon Orangtua</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,17 +52,37 @@
                                     <td><?= $s['email'] ?></td>
                                     <td><?= $s['no_telp'] ?></td>
                                     <td><?= $s['no_telp_orangtua'] ?></td>
+                                    <td>
+                                        <a class="btn btn-warning" href="<?= base_url('datasiswa/edit/') . $s['id'] ?>">Edit</a>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $s['id'] ?>)"> Hapus</button>
+                                    </td>
                                 </tr>
                             <?php endforeach ?>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Yakin ingin menghapus data ini ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form action="Datasiswa/delete" method="POST">
+                                                <input type="hidden" id="id_hapus" name="id_siswa">
+                                                <button type="submit" class="btn btn-danger" value="delete">Hapus</button>
+                                            </form>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Kelas</th>
-                                <th>Category</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </div>
@@ -72,3 +93,9 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script>
+    function klik(data) {
+        var a = data
+        var b = document.getElementById('id_hapus').value = a
+    }
+</script>
