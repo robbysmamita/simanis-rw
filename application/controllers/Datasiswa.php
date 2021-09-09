@@ -91,13 +91,4 @@ class Datasiswa extends CI_Controller
             redirect('Datasiswa');
         }
     }
-    public function edit()
-    {
-        $data['title'] = 'Data Siswa';
-        $this->load->view('layout/header', $data);
-        $this->load->view('layout/topbar', $data);
-        $this->load->view('layout/sidebar', $data);
-        $this->load->view('Datasiswa/edit', $data);
-        $this->load->view('layout/header');
-    }
 }
