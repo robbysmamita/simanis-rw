@@ -28,7 +28,8 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>No Induk</th>
-                                <th>Jenis Kelamin</th>                                
+                                <th>Jenis Kelamin</th> 
+                                <!-- <th>Edit</th> -->
                             </tr>
                         </thead>
                         <tbody>
