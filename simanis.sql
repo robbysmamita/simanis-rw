@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Sep 2021 pada 03.06
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.0
+-- Waktu pembuatan: 13 Sep 2021 pada 06.01
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -64,10 +64,19 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 
 CREATE TABLE `guru` (
   `id` int(11) NOT NULL,
-  `Nama Guru` varchar(25) NOT NULL,
-  `No Induk Guru` varchar(25) NOT NULL,
-  `Jenis Kelamin` varchar(15) NOT NULL
+  `nama_guru` varchar(25) NOT NULL,
+  `no_induk_guru` varchar(25) NOT NULL,
+  `jenis_kelamin` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `guru`
+--
+
+INSERT INTO `guru` (`id`, `nama_guru`, `no_induk_guru`, `jenis_kelamin`) VALUES
+(5, 'Sujaya', '14257', 'Laki-Laki'),
+(6, 'Sujaya', 'a', 'Laki-Laki'),
+(7, 'BENAR', '182872', 'Perempuan');
 
 -- --------------------------------------------------------
 
@@ -155,7 +164,8 @@ CREATE TABLE `siswa` (
 INSERT INTO `siswa` (`id`, `nama_siswa`, `no_induk_siswa`, `jenis_kelamin`, `alamat`, `no_telp`, `no_telp_orangtua`, `email`, `kelas_id`) VALUES
 (1, 'Dani Aditya', '12003846', 'Laki - Laki', 'Jl. Ketegan ', '085362718291', '082536427124', 'Daniaditya@gmail.com', NULL),
 (2, 'budi setiawan', '128529', 'Laki-Laki', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'budisetia@gmail.com', NULL),
-(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL);
+(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL),
+(5, 'Rida', '126534', 'Perempuan', 'Jl. XVC', '08080808', '08080808', 'zxas@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -336,7 +346,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
@@ -360,7 +370,7 @@ ALTER TABLE `mata pelajaran`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahun akademik`
