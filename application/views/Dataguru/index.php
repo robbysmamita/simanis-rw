@@ -45,38 +45,33 @@
                                     <td><?= $s['jenis_kelamin'] ?></td>
                                     <td>
                                         <a class="btn btn-warning" href="<?= base_url('dataguru/edit/') . $s['id'] ?>">Edit</a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $s['id'] ?>)"> Hapus</button>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['id'] ?>"> Hapus</a>
                                     </td>
-                                </tr>
-                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data </h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Yakin ingin menghapus data ini ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <form action="dataguru/delete/id_hapus" method="POST">
-                                                    <!-- <input type="text" id="id_hapus"> -->
-                                                    <button type="submit" class="btn btn-danger" value="delete">Hapus</button>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                </form>
+                                    <div class="modal fade" id="modal_delete<?= $s['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $s['nama_guru'] ?> </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Yakin ingin menghapus data ini <?= $s['nama_guru'] ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?= base_url('Dataguru/delete') ?>" method="POST">
+                                                        <!-- <input type="text" id="id_hapus"> -->
+                                                        <input type="hidden" name="id" value="<?= $s['id'] ?>">
+                                                        <button class="btn btn-danger">Hapus</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                    </form>
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <script>
-                                    function klik(data) {
-                                        var a = data
-                                        var b = document.getElementById('id_hapus').value = a
-                                    }
-                                </script>
+                                </tr>
                             <?php endforeach ?>
                             <!-- Modal -->
                         </tbody>

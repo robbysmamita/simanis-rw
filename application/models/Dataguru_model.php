@@ -27,7 +27,7 @@ class Dataguru_model extends CI_Model
     {
         $id = htmlspecialchars($this->input->post('id'));
         $data = [
-            'nama_guru' => htmlspecialchars($this->input->post('Nama_guru')),
+            'nama_guru' => htmlspecialchars($this->input->post('nama_guru')),
             'no_induk_guru' => htmlspecialchars($this->input->post('No_induk_guru')),
             'jenis_kelamin ' => htmlspecialchars($this->input->post('Jenis_Kelamin')),
 
@@ -37,7 +37,7 @@ class Dataguru_model extends CI_Model
     }
     public function delete($id)
     {
-        // $id = htmlspecialchars($this->input->post('id'));
+        $id = htmlspecialchars($this->input->post('id'));
         $this->db->where('id', $id);
         $this->db->delete('guru');
     }

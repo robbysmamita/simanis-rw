@@ -70,7 +70,7 @@ class Dataguru extends CI_Controller
             ]
         );
         $this->form_validation->set_rules(
-            'Nama_guru',
+            'nama_guru',
             'Nama guru',
             'required',
             [
@@ -105,15 +105,17 @@ class Dataguru extends CI_Controller
             $this->load->view('layout/header');
         } else {
             $this->Dataguru_model->edit();
-            $this->session->flashdata('guru', 'Disimpan');
+            $this->session->set_flashdata('guru', 'Diubah');
             redirect('Dataguru');
         }
     }
     public function delete($id = null)
     {
+        // var_dump($this->db->last_query());
         // var_dump( $data['guru']);
-        // die; 
+        // die;
         $this->Dataguru_model->delete($id);
+        $this->session->set_flashdata('guru', 'Dihapus');
         redirect('Dataguru');
     }
 }
