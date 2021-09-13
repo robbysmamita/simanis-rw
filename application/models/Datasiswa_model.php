@@ -26,7 +26,7 @@ class Datasiswa_model extends CI_Model
         ];
         $this->db->insert('siswa', $data);
     }
-    public function edit()
+    public function edit() 
     {
         $id = htmlspecialchars($this->input->post('id'));
         $data = [
