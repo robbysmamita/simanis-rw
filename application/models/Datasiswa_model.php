@@ -26,7 +26,7 @@ class Datasiswa_model extends CI_Model
         ];
         $this->db->insert('siswa', $data);
     }
-    public function edit() 
+    public function edit()
     {
         $id = htmlspecialchars($this->input->post('id'));
         $data = [
@@ -45,17 +45,17 @@ class Datasiswa_model extends CI_Model
     public function delete()
     {
         $id = htmlspecialchars($this->input->post('id'));
-        $data = [
-            'nama_siswa' => htmlspecialchars($this->input->post('nama_siswa')),
-            'no_induk_siswa' => htmlspecialchars($this->input->post('No_induk_siswa')),
-            'jenis_kelamin ' => htmlspecialchars($this->input->post('Jenis_Kelamin')),
-            'alamat' => htmlspecialchars($this->input->post('Alamat')),
-            'no_telp' => htmlspecialchars($this->input->post('no_telp')),
-            'no_telp_orangtua' => htmlspecialchars($this->input->post('no_telp_orangtua')),
-            'email' => htmlspecialchars($this->input->post('email')),
-            'kelas_id' => NULL
-        ];
+        // $data = [
+        //     'nama_siswa' => htmlspecialchars($this->input->post('nama_siswa')),
+        //     'no_induk_siswa' => htmlspecialchars($this->input->post('No_induk_siswa')),
+        //     'jenis_kelamin ' => htmlspecialchars($this->input->post('Jenis_Kelamin')),
+        //     'alamat' => htmlspecialchars($this->input->post('Alamat')),
+        //     'no_telp' => htmlspecialchars($this->input->post('no_telp')),
+        //     'no_telp_orangtua' => htmlspecialchars($this->input->post('no_telp_orangtua')),
+        //     'email' => htmlspecialchars($this->input->post('email')),
+        //     'kelas_id' => NULL
+        // ];
         $this->db->where('id', $id);
-        $this->db->delete('siswa', $data);
+        $this->db->delete('siswa');
     }
 }

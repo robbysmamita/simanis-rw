@@ -176,4 +176,10 @@ class Datasiswa extends CI_Controller
             redirect('Datasiswa');
         }
     }
+    public function delete($id = null)
+    {
+        $this->Datasiswa_model->delete($id);
+        $this->session->set_flashdata('siswa', 'Dihapus');
+        redirect('Datasiswa');
+    }
 }

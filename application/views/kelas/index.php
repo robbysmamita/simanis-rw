@@ -40,7 +40,7 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
-                                    <td><a class="btn btn-warning" href="<?= base_url('kelas/edit') . $k['id'] ?>">Edit</a>
+                                    <td><a class="btn btn-warning" href="<?= base_url('kelas/edit/') . $k['id'] ?>">Edit</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $k['id'] ?>)"> Hapus</button>
                                     </td>
                                 </tr>

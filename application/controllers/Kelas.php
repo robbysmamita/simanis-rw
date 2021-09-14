@@ -42,9 +42,9 @@ class Kelas extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data['title'] = "Tambah Kelas";
             $this->load->view('layout/header', $data);
-            $this->load->view('layout/topbar');
-            $this->load->view('layout/sidebar');
-            $this->load->view('kelas/tambah');
+            $this->load->view('layout/topbar', $data);
+            $this->load->view('layout/sidebar', $data);
+            $this->load->view('kelas/tambah', $data);
             $this->load->view('layout/footer');
         } else {
             $this->Kelas_model->tambah();
@@ -52,8 +52,16 @@ class Kelas extends CI_Controller
             redirect('kelas');
         }
     }
-    public function edit()
+    public function edit($id)
     {
+        $this->form_validation->set_rules(
+            'id',
+            'ID',
+            'required',
+            [
+                'required' => 'ID'
+            ]
+        );
         $this->form_validation->set_rules(
             'kelas',
             'kelas',
@@ -62,8 +70,26 @@ class Kelas extends CI_Controller
                 'required' => 'Harus diisi'
             ]
         );
+        $this->form_validation->set_rules(
+            'category',
+            'category',
+            'required',
+            [
+                'required' => 'Harus Diisi'
+            ]
+        );
         if ($this->form_validation->run() == FALSE) {
+            $data['kelas'] = $this->Kelas_model->getByID($id);
             $data['title'] = "Edit Kelas";
+            $this->load->view('layout/header', $data);
+            $this->load->view('layout/topbar', $data);
+            $this->load->view('layout/sidebar', $data);
+            $this->load->view('Kelas/edit', $data);
+            $this->load->view('layout/footer');
+        } else {
+            $this->Kelas_model->edit();
+            $this->session->set_flashdata('kelas', 'Disimpan');
+            redirect('Kelas');
         }
     }
 }

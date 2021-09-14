@@ -30,7 +30,7 @@
                                 <th>No Induk</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat </th>
-                                <th>Email</th> 
+                                <th>Email</th>
                                 <th>No Telpon</th>
                                 <th> No Telepon Orangtua</th>
                                 <th>Action</th>
@@ -54,12 +54,36 @@
                                     <td><?= $s['no_telp_orangtua'] ?></td>
                                     <td>
                                         <a class="btn btn-warning" href="<?= base_url('datasiswa/edit/') . $s['id'] ?>">Edit</a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $s['id'] ?>)"> Hapus</button>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['id'] ?>"> Hapus</a>
                                     </td>
                                 </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal_delete<?= $s['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $s['nama_siswa'] ?> </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Yakin ingin menghapus data ini <?= $s['nama_siswa'] ?> ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="<?= base_url('Datasiswa/delete') ?>" method="POST">
+                                                    <!-- <input type="text" id="id_hapus"> -->
+                                                    <input type="hidden" name="id" value="<?= $s['id'] ?>">
+                                                    <button class="btn btn-danger">Hapus</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <?php endforeach ?>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -72,30 +96,30 @@
                                             Yakin ingin menghapus data ini ?
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="delete" method="POST">
+                                            <form action="Datasiswa/delete" method="POST">
                                                 <input type="hidden" id="id_hapus" name="id_siswa">
                                                 <button type="submit" class="btn btn-danger" value="delete">Hapus</button>
                                             </form>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </tbody>
-                    </table>
+                                        </div> -->
                 </div>
             </div>
         </div>
-
-
+        </tbody>
+        </table>
     </div>
-    <!-- /.content -->
+</div>
+</div>
+
+
+</div>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-<script>
+<!-- <script>
     function klik(data) {
         var a = data
         var b = document.getElementById('id_hapus').value = a
     }
-</script>
+</script> -->
