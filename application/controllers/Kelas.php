@@ -52,4 +52,18 @@ class Kelas extends CI_Controller
             redirect('kelas');
         }
     }
+    public function edit()
+    {
+        $this->form_validation->set_rules(
+            'kelas',
+            'kelas',
+            'required',
+            [
+                'required' => 'Harus diisi'
+            ]
+        );
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = "Edit Kelas";
+        }
+    }
 }

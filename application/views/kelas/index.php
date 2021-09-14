@@ -27,7 +27,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Kelas</th>
-                                <th>Category</th>
+                                <th>Jurusan</th>
+                                <th>Form Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,17 +40,20 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
+                                    <td><a class="btn btn-warning" href="<?= base_url('kelas/edit') . $k['id'] ?>">Edit</a>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $k['id'] ?>)"> Hapus</button>
+                                    </td>
                                 </tr>
                             <?php endforeach ?>
 
                         </tbody>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
                                 <th>No</th>
                                 <th>Kelas</th>
                                 <th>Category</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> -->
                     </table>
                 </div>
             </div>

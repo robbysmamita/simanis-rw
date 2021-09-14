@@ -28,7 +28,7 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>No Induk</th>
-                                <th>Jenis Kelamin</th>                                
+                                <th>Jenis Kelamin</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,13 +41,13 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $s['nama_guru'] ?></td>
                                     <td><?= $s['no_induk_guru'] ?></td>
-                                    <td><?= $s['jenis_kelamin'] ?></td>                                    
+                                    <td><?= $s['jenis_kelamin'] ?></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
                         <tfoot>
                             <tr>
-                            <!-- <th>No</th>
+                                <!-- <th>No</th>
                                 <th>Nama</th>
                                 <th>No Induk</th>
                                 <th>Jenis Kelamin</th>

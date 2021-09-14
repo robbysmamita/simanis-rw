@@ -21,7 +21,7 @@
                         <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="category">Category</label>
+                        <label class="control-label" for="category">Jurusan</label>
                         <select class="form-control" name="category" id="category">
                             <option value="IPA">IPA</option>
                             <option value="IPS">IPS</option>
