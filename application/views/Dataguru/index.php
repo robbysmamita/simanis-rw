@@ -29,6 +29,7 @@
                                 <th>Nama</th>
                                 <th>No Induk</th>
                                 <th>Jenis Kelamin</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,8 +43,37 @@
                                     <td><?= $s['nama_guru'] ?></td>
                                     <td><?= $s['no_induk_guru'] ?></td>
                                     <td><?= $s['jenis_kelamin'] ?></td>
+                                    <td>
+                                        <a class="btn btn-warning" href="<?= base_url('dataguru/edit/') . $s['id'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['id'] ?>"> Hapus</a>
+                                    </td>
+                                    <div class="modal fade" id="modal_delete<?= $s['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $s['nama_guru'] ?> </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Yakin ingin menghapus data ini <?= $s['nama_guru'] ?> ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="<?= base_url('Dataguru/delete') ?>" method="POST">
+                                                        <!-- <input type="text" id="id_hapus"> -->
+                                                        <input type="hidden" name="id" value="<?= $s['id'] ?>">
+                                                        <button class="btn btn-danger">Hapus</button>
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </tr>
                             <?php endforeach ?>
+                            <!-- Modal -->
                         </tbody>
                         <tfoot>
                             <tr>
@@ -57,8 +87,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <!-- /.content -->
 </div>

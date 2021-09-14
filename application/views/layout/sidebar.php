@@ -16,10 +16,10 @@
             <li class="header">PERSONAL</li>
             <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Akademis</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
-                    <li><a href="<?= base_url('Kelas/index') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
-                    <li><a href="<?= base_url('Jadwal/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
-                    <li><a href="i<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i> Data Guru</a></li>
+                    <!-- <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li> -->
+                    <li><a href="index-crm.html"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
+                    <li><a href="index-analytics.html"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i> Data Guru</a></li>
                     <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i> Data Siswa</a></li>
                 </ul>
             </li>

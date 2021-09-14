@@ -30,7 +30,7 @@
                                 <th>No Induk</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat </th>
-                                <th>Email</th>
+                                <th>Email</th> 
                                 <th>No Telpon</th>
                                 <th> No Telepon Orangtua</th>
                                 <th>Action</th>
@@ -72,7 +72,7 @@
                                             Yakin ingin menghapus data ini ?
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="Datasiswa/delete" method="POST">
+                                            <form action="delete" method="POST">
                                                 <input type="hidden" id="id_hapus" name="id_siswa">
                                                 <button type="submit" class="btn btn-danger" value="delete">Hapus</button>
                                             </form>
