@@ -14,10 +14,12 @@
         <div class="card">
             <div class="card-body">
                 <form action="" method="post">
-                    <h4 class="text-black">Tambah Data Kelas</h4>
+                    <h4 class="text-black">Edit Data Kelas</h4>
                     <div class="form-group">
                         <label class="control-label" for="kelas">Kelas</label>
-                        <input type="text" class="form-control" name="kelas" id="kelas" aria-describedby="helpBlock2">
+                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $kelas['id'] ?>" aria-describedby="helpBlock2">
+
+                        <input type="text" class="form-control" name="kelas" id="kelas" value="<?= $kelas['kelas'] ?>" aria-describedby="helpBlock2">
                         <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">

@@ -41,7 +41,7 @@
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
                                     <td>
-                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') . $k['id'] ?>">Edit</a>
+                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') ?><?= $k['id'] ?>">Edit</a>
                                         <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['id'] ?>"> Hapus</a>
                                     </td>
                                 </tr>
@@ -62,6 +62,7 @@
                                                 <form action="<?= base_url('kelas/delete') ?>" method="POST">
                                                     <!-- <input type="text" id="id_hapus"> -->
                                                     <input type="hidden" name="id" value="<?= $k['id'] ?>">
+
                                                     <button class="btn btn-danger">Hapus</button>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                 </form>

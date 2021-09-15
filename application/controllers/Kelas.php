@@ -54,6 +54,7 @@ class Kelas extends CI_Controller
     }
     public function edit($id)
     {
+
         $this->form_validation->set_rules(
             'id',
             'ID',
@@ -80,11 +81,13 @@ class Kelas extends CI_Controller
         );
         if ($this->form_validation->run() == FALSE) {
             $data['kelas'] = $this->Kelas_model->getByID($id);
+            // var_dump($data['kelas']);
+            // die;
             $data['title'] = "Edit Kelas";
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
             $this->load->view('layout/sidebar', $data);
-            $this->load->view('Kelas/edit', $data);
+            $this->load->view('kelas/edit', $data);
             $this->load->view('layout/footer');
         } else {
             $this->Kelas_model->edit();
@@ -94,6 +97,8 @@ class Kelas extends CI_Controller
     }
     public function delete($id = null)
     {
+
+        // var_dump($id['kelas']);
         $this->Kelas_model->delete($id);
         $this->session->set_flashdata('kelas', 'Dihapus');
         redirect('Kelas');

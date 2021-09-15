@@ -111,9 +111,9 @@ class Dataguru extends CI_Controller
     }
     public function delete($id = null)
     {
-        // var_dump($this->db->last_query());
-        // var_dump( $data['guru']);
-        // die;
+        var_dump($this->db->last_query());
+        var_dump($data['guru']);
+        die;
         $this->Dataguru_model->delete($id);
         $this->session->set_flashdata('guru', 'Dihapus');
         redirect('Dataguru');

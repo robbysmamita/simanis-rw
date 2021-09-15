@@ -10,7 +10,7 @@ class Kelas_model extends CI_Model
         if ($id == NULL) {
             return $this->db->get('kelas')->result_array();
         } else {
-            return $this->db->get_where('kelas', ['id', $id])->row_array();
+            return $this->db->get_where('kelas', ['id' => $id])->row_array();
         }
     }
 
@@ -32,10 +32,12 @@ class Kelas_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('kelas', $data);
     }
-    public function delete($id = null)
+    public function delete()
     {
-        $id = htmlspecialchars($id);
+        $id = htmlspecialchars($this->input->post('id'));
         $this->db->where('id', $id);
         $this->db->delete('kelas');
+        // var_dump($this->db->last_query());
+        // die;
     }
 }
