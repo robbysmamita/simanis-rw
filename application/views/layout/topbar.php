@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav pull-left">
                     <li><a class="sidebar-toggle" data-toggle="push-menu" href="#"></a> </li>
                 </ul>
-                <div class="pull-left search-box">
+                <!-- <div class="pull-left search-box">
                     <form action="#" method="get" class="search-form">
                         <div class="input-group">
                             <input name="search" class="form-control" placeholder="" type="text">
@@ -23,12 +23,12 @@
                             </span>
                         </div>
                     </form>
-                    <!-- search form -->
-                </div>
+                    search form
+                </div> -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <!-- Messages -->
-                        <li class="dropdown messages-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope-o"></i>
+                        <!-- <li class="dropdown messages-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope-o"></i>
                                 <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                             </a>
                             <ul class="dropdown-menu">
@@ -63,9 +63,9 @@
                                 </li>
                                 <li class="footer"><a href="#">View All Messages</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- Notifications  -->
-                        <li class="dropdown messages-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-bell-o"></i>
+                        <!-- <li class="dropdown messages-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-bell-o"></i>
                                 <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                             </a>
                             <ul class="dropdown-menu">
@@ -100,9 +100,9 @@
                                 </li>
                                 <li class="footer"><a href="#">Check all Notifications</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- User Account  -->
-                        <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?= base_url('assets') ?>/img/img1.jpg" class="user-image" alt="User Image"> <span class="hidden-xs">Alexander Pierce</span> </a>
+                        <!-- <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?= base_url('assets') ?>/img/img1.jpg" class="user-image" alt="User Image"> <span class="hidden-xs">Alexander Pierce</span> </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
                                     <div class="pull-left user-img"><img src="<?= base_url('assets') ?>/img/img1.jpg" class="img-responsive img-circle" alt="User"></div>
@@ -116,7 +116,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>

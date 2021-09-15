@@ -25,7 +25,7 @@
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Aktivitas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="apps-calendar.html"><i class="fa fa-angle-right"></i> Calendar</a></li>
+                    <li><a href="<?= base_url('l') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
                     <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
@@ -148,6 +148,11 @@
                     </li>
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                 </ul>
+            </li> -->
+            <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
+                    <!-- <ul class="treeview-menu">
+                    <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
+                </ul> -->
             </li>
         </ul>
         <li><a href="#" class="badge badge-danger">Log Out</a></li>
