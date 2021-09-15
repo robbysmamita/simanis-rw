@@ -18,7 +18,7 @@
                 <ul class="treeview-menu">
                     <!-- <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li> -->
                     <li><a href="<?= base_url('kelas/index') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
-                    <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('Jadwal/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i> Data Guru</a></li>
                     <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i> Data Siswa</a></li>
                 </ul>
@@ -149,13 +149,16 @@
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                 </ul>
             </li> -->
-            <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
-                    <!-- <ul class="treeview-menu">
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
+            <ul class="treeview-menu">
                     <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
-                </ul> -->
-            </li>
+                </ul>
+            </li> -->
         </ul>
         <!-- <li><a href="#" class="badge badge-danger">Log Out</a></li> -->
     </div>
     <!-- /.sidebar -->
+    <ul class="sidebar-footer">
+        <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
+    </ul>
 </aside>

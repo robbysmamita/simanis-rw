@@ -39,7 +39,7 @@
                         </select>
                         <?= form_error('Jenis_Kelamin', '<small class="text-danger">', '</small>') ?>
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary float-right">Simpan</button>
                     </div>
