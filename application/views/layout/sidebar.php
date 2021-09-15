@@ -16,7 +16,7 @@
             <li class="header">PERSONAL</li>
             <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Akademis</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
+                    <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
                     <li><a href="<?= base_url('kelas/index') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
                     <li><a href="<?= base_url('Jadwal/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>

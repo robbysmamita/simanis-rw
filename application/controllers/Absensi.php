@@ -17,4 +17,7 @@ class Absensi extends CI_Controller
         $this->load->view('Absensi/absensisiswa', $data);
         $this->load->view('layout/footer');
     }
+    public function tambah()
+    {
+    }
 }

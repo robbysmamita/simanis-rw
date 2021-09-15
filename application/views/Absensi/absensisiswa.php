@@ -2,9 +2,9 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-        <h1>Modern Dashboard</h1>
+        <h1>Absensi Siswa</h1>
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
+            <li><a href="<?= base_url('Dashboard') ?>">Home</a></li>
             <li><i class="fa fa-angle-right"></i> Modern Dashboard</li>
         </ol>
     </div>
@@ -59,7 +59,7 @@
             </div> -->
         <!-- /.row -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-3">
                 <div class="tile-progress tile-pink">
                     <div class="tile-header">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- /.row -->
 
         <div class="row">

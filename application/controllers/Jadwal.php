@@ -18,5 +18,13 @@ class Jadwal extends CI_Controller
         $this->load->view('Jadwal/index', $data);
         $this->load->view('layout/footer');
     }
-    
+    public function tambah()
+    {
+        $data['title'] = 'Jadwal Pelajaran';
+        $this->load->view('layout/header', $data);
+        $this->load->view('layout/topbar', $data);
+        $this->load->view('layout/sidebar', $data);
+        $this->load->view('Jadwal/index', $data);
+        $this->load->view('layout/footer');
+    }
 }
