@@ -23,7 +23,7 @@
                     <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i> Data Siswa</a></li>
                 </ul>
             </li>
-            <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Aktivitas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Aktivitas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('l') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
                     <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
@@ -58,7 +58,7 @@
                     <li><a href="ui-list-media.html"><i class="fa fa-angle-right"></i> List Media</a></li>
                     <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
                 </ul>
-            </li>
+            </li> -->
             <!-- <li class="header">FORMS, TABLE & WIDGETS</li>
             <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
@@ -132,7 +132,7 @@
                     <li><a href="icon-flag.html"><i class="fa fa-angle-right"></i> Flag Icons</a></li>
                 </ul>
             </li> -->
-            <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                     <li class="treeview"> <a href="#"><i class="fa fa-angle-right"></i> Level One <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -155,7 +155,7 @@
                 </ul> -->
             </li>
         </ul>
-        <li><a href="#" class="badge badge-danger">Log Out</a></li>
+        <!-- <li><a href="#" class="badge badge-danger">Log Out</a></li> -->
     </div>
     <!-- /.sidebar -->
 </aside>
