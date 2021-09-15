@@ -16,16 +16,17 @@
             <li class="header">PERSONAL</li>
             <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Akademis</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <!-- <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li> -->
+                    <li><a href="<?= base_url() ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
+                    <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
                     <li><a href="<?= base_url('kelas/index') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
-                    <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('Jadwal/index') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i> Data Guru</a></li>
                     <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i> Data Siswa</a></li>
                 </ul>
             </li>
             <!-- <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Aktivitas</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= base_url('l') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="e"><i class="fa fa-angle-right"></i> Absensi</a></li>
                     <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
@@ -132,7 +133,7 @@
                     <li><a href="icon-flag.html"><i class="fa fa-angle-right"></i> Flag Icons</a></li>
                 </ul>
             </li> -->
-            <!-- <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <!-- <li class="treeview"> <a href="#"><span class="material-icon-outlined"></span></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                     <li class="treeview"> <a href="#"><i class="fa fa-angle-right"></i> Level One <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
