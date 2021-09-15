@@ -40,10 +40,36 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
-                                    <td><a class="btn btn-warning" href="<?= base_url('kelas/edit/') . $k['id'] ?>">Edit</a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter" onclick="klik(<?= $k['id'] ?>)"> Hapus</button>
+                                    <td>
+                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') . $k['id'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['id'] ?>"> Hapus</a>
                                     </td>
                                 </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal_delete<?= $k['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $k['kelas'] ?> </h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Yakin ingin menghapus data ini <?= $k['kelas'] ?> ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="<?= base_url('kelas/delete') ?>" method="POST">
+                                                    <!-- <input type="text" id="id_hapus"> -->
+                                                    <input type="hidden" name="id" value="<?= $k['id'] ?>">
+                                                    <button class="btn btn-danger">Hapus</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <?php endforeach ?>
 
                         </tbody>

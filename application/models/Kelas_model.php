@@ -32,14 +32,10 @@ class Kelas_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('kelas', $data);
     }
-    public function delete()
+    public function delete($id = null)
     {
-        $id = htmlspecialchars($this->input->post('id'));
-        $data = [
-            'kelas' => htmlspecialchars($this->input->post('kelas')),
-            'category' => htmlspecialchars($this->input->post('category'))
-        ];
+        $id = htmlspecialchars($id);
         $this->db->where('id', $id);
-        $this->db->delete('kelas', $data);
+        $this->db->delete('kelas');
     }
 }

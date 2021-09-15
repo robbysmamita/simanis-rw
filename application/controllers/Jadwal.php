@@ -18,4 +18,5 @@ class Jadwal extends CI_Controller
         $this->load->view('Jadwal/index', $data);
         $this->load->view('layout/footer');
     }
+    
 }

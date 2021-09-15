@@ -92,4 +92,10 @@ class Kelas extends CI_Controller
             redirect('Kelas');
         }
     }
+    public function delete($id = null)
+    {
+        $this->Kelas_model->delete($id);
+        $this->session->set_flashdata('kelas', 'Dihapus');
+        redirect('Kelas');
+    }
 }
