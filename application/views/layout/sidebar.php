@@ -4,7 +4,7 @@
     <div class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
-            <div class="image text-center"><img src="<?= base_url('assets') ?>/img/profil1.jpg" class="img-circle" alt="User Image"> </div>
+            <div class="image text-center"><img src="<?= base_url('assets') ?>/img/img1.jpg" class="img-circle" alt="User Image"> </div>
             <div class="info">
                 <p>Zulfikar Rofi</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
@@ -150,13 +150,20 @@
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                 </ul>
             </li> -->
-            <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
-                    <!-- <ul class="treeview-menu">
-                    <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
-                </ul> -->
-            </li>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
+                    <ul class="treeview-menu">
+                        <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
+                    </ul>
+            </li> -->
         </ul>
         <!-- <li><a href="#" class="badge badge-danger">Log Out</a></li> -->
     </div>
     <!-- /.sidebar -->
+    <div class="box">
+        <!-- /.box-body -->
+        <ul class="box-footer">
+            <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
+        </ul>
+        <!-- box-footer -->
+    </div>
 </aside>
