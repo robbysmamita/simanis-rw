@@ -151,15 +151,19 @@
                 </ul>
             </li> -->
             <!-- <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
-            <ul class="treeview-menu">
-                    <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
-                </ul>
+                    <ul class="treeview-menu">
+                        <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
+                    </ul>
             </li> -->
         </ul>
         <!-- <li><a href="#" class="badge badge-danger">Log Out</a></li> -->
     </div>
     <!-- /.sidebar -->
-    <ul class="sidebar-footer">
-        <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
-    </ul>
+    <div class="box">
+        <!-- /.box-body -->
+        <ul class="box-footer">
+            <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
+        </ul>
+        <!-- box-footer -->
+    </div>
 </aside>

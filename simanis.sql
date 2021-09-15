@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Sep 2021 pada 06.01
+-- Waktu pembuatan: 15 Sep 2021 pada 06.47
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -74,9 +74,7 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id`, `nama_guru`, `no_induk_guru`, `jenis_kelamin`) VALUES
-(5, 'Sujaya', '14257', 'Laki-Laki'),
-(6, 'Sujaya', 'a', 'Laki-Laki'),
-(7, 'BENAR', '182872', 'Perempuan');
+(5, 'Sujaya', '14257', 'Laki-Laki');
 
 -- --------------------------------------------------------
 
@@ -86,8 +84,8 @@ INSERT INTO `guru` (`id`, `nama_guru`, `no_induk_guru`, `jenis_kelamin`) VALUES
 
 CREATE TABLE `kelas` (
   `id` int(11) NOT NULL,
-  `Kelas` varchar(15) NOT NULL,
-  `IPA/IPS` varchar(10) NOT NULL
+  `kelas` varchar(15) NOT NULL,
+  `category` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -346,13 +344,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `login_attempts`
@@ -370,7 +368,7 @@ ALTER TABLE `mata pelajaran`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahun akademik`
