@@ -159,11 +159,13 @@
         <!-- <li><a href="#" class="badge badge-danger">Log Out</a></li> -->
     </div>
     <!-- /.sidebar -->
-    <div class="box">
-        <!-- /.box-body -->
-        <ul class="box-footer">
-            <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
-        </ul>
-        <!-- box-footer -->
-    </div>
+    <footer>
+        <div class="box">
+            <!-- /.box-body -->
+            <ul class="box-footer">
+                <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
+            </ul>
+            <!-- box-footer -->
+        </div>
+    </footer>
 </aside>
