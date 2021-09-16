@@ -75,14 +75,14 @@
                             <?php endforeach ?>
                             <!-- Modal -->
                         </tbody>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
-                                <!-- <th>No</th>
+                                <th>No</th>
                                 <th>Nama</th>
                                 <th>No Induk</th>
                                 <th>Jenis Kelamin</th>
-                            </tr> -->
-                        </tfoot>
+                            </tr>
+                        </tfoot> -->
                     </table>
                 </div>
             </div>
