@@ -27,7 +27,7 @@
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="e"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
                     <!-- <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
