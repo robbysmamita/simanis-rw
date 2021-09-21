@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Sep 2021 pada 06.47
+-- Waktu pembuatan: 21 Sep 2021 pada 05.34
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -104,19 +104,19 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mata pelajaran`
+-- Struktur dari tabel `mapel`
 --
 
-CREATE TABLE `mata pelajaran` (
+CREATE TABLE `mapel` (
   `id` int(11) NOT NULL,
   `mata_pelajaran` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `mata pelajaran`
+-- Dumping data untuk tabel `mapel`
 --
 
-INSERT INTO `mata pelajaran` (`id`, `mata_pelajaran`) VALUES
+INSERT INTO `mapel` (`id`, `mata_pelajaran`) VALUES
 (1, 'Bahasa Inggris'),
 (2, 'Bahasa Jerman');
 
@@ -162,8 +162,7 @@ CREATE TABLE `siswa` (
 INSERT INTO `siswa` (`id`, `nama_siswa`, `no_induk_siswa`, `jenis_kelamin`, `alamat`, `no_telp`, `no_telp_orangtua`, `email`, `kelas_id`) VALUES
 (1, 'Dani Aditya', '12003846', 'Laki - Laki', 'Jl. Ketegan ', '085362718291', '082536427124', 'Daniaditya@gmail.com', NULL),
 (2, 'budi setiawan', '128529', 'Laki-Laki', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'budisetia@gmail.com', NULL),
-(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL),
-(5, 'Rida', '126534', 'Perempuan', 'Jl. XVC', '08080808', '08080808', 'zxas@gmail.com', NULL);
+(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -285,9 +284,9 @@ ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mata pelajaran`
+-- Indeks untuk tabel `mapel`
 --
-ALTER TABLE `mata pelajaran`
+ALTER TABLE `mapel`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
@@ -344,13 +343,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT untuk tabel `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `login_attempts`
@@ -359,16 +358,16 @@ ALTER TABLE `login_attempts`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `mata pelajaran`
+-- AUTO_INCREMENT untuk tabel `mapel`
 --
-ALTER TABLE `mata pelajaran`
+ALTER TABLE `mapel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tahun akademik`
