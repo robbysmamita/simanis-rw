@@ -52,37 +52,37 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-        $akun = $this->db->get_where('akun', ['email' => $email])->row_array();
+        $users = $this->db->get_where('users', ['email' => $email])->row_array();
 
-        if ($akun) {
-            if ($akun['is_active'] == 1) {
-                if (password_verify($password, $akun['password'])) {
-                    unset($akun['password']);
+        if ($users) {
+            if ($users['is_active'] == 1) {
+                if (password_verify($password, $users['password'])) {
+                    unset($users['password']);
                     $data = [
-                        'email' => $akun['email'],
-                        'nama' => $akun['nama'],
-                        'role_id' => $akun['role_id'],
-                        'akun_id' => $akun['id']
+                        'email' => $users['email'],
+                        'nama' => $users['nama'],
+                        'role_id' => $users['role_id'],
+                        'users_id' => $users['id']
                     ];
                     $this->session->set_userdata($data);
 
-                    if ($akun['role_id'] == 1) {
-                        redirect('admin/dashboard');
+                    if ($users['role_id'] == 1) {
+                        redirect('dashboard/index');
                     } else {
                         redirect('dashboard');
                     }
                 } else {
-                    $this->session->set_flashdata('akun', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+                    $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
                     <strong> Username/Password salah </strong> </div>');
                     redirect('auth');
                 }
             } else {
-                $this->session->set_flashdata('akun', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+                $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
                 <strong> Username Tidak Aktif, Hubungi Admin!  </strong> </div>');
                 redirect('auth');
             }
         } else {
-            $this->session->set_flashdata('akun', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+            $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
             <strong> Username Tidak Ada </strong> </div>');
             redirect('masuk');
             // redirect('auth');
@@ -99,7 +99,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules(
             'email',
             'Email',
-            'required|is_unique[akun.email]|valid_email',
+            'required|is_unique[users.email]|valid_email',
             [
                 'required' => 'Email Harus Diisi',
                 'is_unique' => 'Email Sudah terdaftar',
@@ -155,9 +155,9 @@ class Auth extends CI_Controller
                 'is_active' => 1,
                 'created_date' => $now
             ];
-            $this->db->insert('akun', $data);
-            $this->session->set_flashdata('akun', '<div class="alert alert-success mt-2 mb-2" role="alert">
-			Registrasi Akun <strong> Berhasil! </strong> Silahkan Login </div>');
+            $this->db->insert('users', $data);
+            $this->session->set_flashdata('users', '<div class="alert alert-success mt-2 mb-2" role="alert">
+			Registrasi users <strong> Berhasil! </strong> Silahkan Login </div>');
             redirect('masuk');
             // redirect('auth');
         }
@@ -165,10 +165,10 @@ class Auth extends CI_Controller
 
     public function forgotpassword()
     {
-        $this->load->view('layout/home/header');
-        $this->load->view('layout/home/topbar');
+        // $this->load->view('layout/home/header');
+        // $this->load->view('layout/home/topbar');
         $this->load->view('auth/forgotpassword');
-        $this->load->view('layout/home/footer');
+        // $this->load->view('layout/home/footer');
     }
 
     public function logout()
@@ -176,9 +176,9 @@ class Auth extends CI_Controller
         $this->session->unset_userdata('email');
         $this->session->unset_userdata('nama');
         $this->session->unset_userdata('role_id');
-        $this->session->unset_userdata('akun_id');
+        $this->session->unset_userdata('users_id');
         $this->session->all_userdata();
-        $this->session->set_flashdata('akun', '<div class="alert alert-success mb-2 mt-2" role="alert">
+        $this->session->set_flashdata('users', '<div class="alert alert-success mb-2 mt-2" role="alert">
         Anda Berhasil <strong>Logout </strong> </div>');
         redirect('masuk');
         // redirect('auth');
