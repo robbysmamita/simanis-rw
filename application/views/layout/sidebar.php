@@ -19,10 +19,10 @@
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Absensi Siswa</a></li>
                     <!-- <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li> -->
-                    <li><a href="<?= base_url('kelas/index') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
-                    <li><a href="<?= base_url('mapel/index') ?>"><i class="fa fa-angle-right"></i>Data Mata Pelajaran</a></li>
-                    <li><a href="<?= base_url('Dataguru/index') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
-                    <li><a href="<?= base_url('Datasiswa/index') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
+                    <li><a href="<?= base_url('kelas') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
+                    <li><a href="<?= base_url('mapel') ?>"><i class="fa fa-angle-right"></i>Data Mata Pelajaran</a></li>
+                    <li><a href="<?= base_url('Dataguru') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
+                    <li><a href="<?= base_url('Datasiswa') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
                 </ul>
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
