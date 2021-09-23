@@ -39,7 +39,7 @@ class Auth extends CI_Controller
         );
 
         if ($this->form_validation->run() == FALSE) {
-            // $this->load->view('layout/header');
+            $this->load->view('layout/header');
             // $this->load->view('layout/home/topbar');
             $this->load->view('auth/index');
             // $this->load->view('layout/home/footer');

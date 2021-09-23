@@ -75,7 +75,7 @@
 
         <div class="row mt-3">
             <div class="col-12 text-center">
-                <p class="text-muted">Sudah membuat akun? <a href="<?= base_url() ?>masuk" class="text-primary font-weight-bold ml-1">Masuk ke Dashboard, klik disini</a></p>
+                <p class="text-muted">Sudah membuat akun? <a href="<?= base_url('auth/index') ?>" class="text-primary font-weight-bold ml-1">Masuk ke Dashboard, klik disini</a></p>
             </div> <!-- end col -->
         </div>
         <!-- end row -->
