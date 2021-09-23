@@ -21,16 +21,28 @@
                                 <?= form_error('email', '<small class="text-danger">', '</small>') ?>
                             </div>
                             <div class="form-group">
-                                <label class="form-control-label">Nama Lengkap</label>
+                                <label class="form-control-label">First Name</label>
                                 <div class="input-group input-group-merge">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i data-feather="user" class="icon-dual"></i>
                                         </span>
                                     </div>
-                                    <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama Anda disini" autocomplete="off">
+                                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
                                 </div>
-                                <?= form_error('nama', '<small class="text-danger">', '</small>') ?>
+                                <?= form_error('last_name', '<small class="text-danger">', '</small>') ?>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Last Name</label>
+                                <div class="input-group input-group-merge">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i data-feather="user" class="icon-dual"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name" autocomplete="off">
+                                </div>
+                                <?= form_error('last_name', '<small class="text-danger">', '</small>') ?>
                             </div>
 
                             <div class="form-group mt-4">

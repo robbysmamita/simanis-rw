@@ -3,7 +3,7 @@
 class Auth_model extends CI_Model
 {
     private $_table = "user";
-    const SESSION_KEY = 'user_id';
+    const SESSION_KEY = ' ';
 
     public function rules()
     {
@@ -20,7 +20,7 @@ class Auth_model extends CI_Model
             ]
         ];
     }
-    public function login($username, $password)
+    public function private_login()
     {
     }
 }

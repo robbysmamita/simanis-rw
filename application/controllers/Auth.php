@@ -108,8 +108,17 @@ class Auth extends CI_Controller
         );
 
         $this->form_validation->set_rules(
-            'nama',
-            'Nama',
+            'first_name',
+            'first_name',
+            'required',
+            [
+                'required' => 'Nama Harus Diisi'
+            ]
+        );
+
+        $this->form_validation->set_rules(
+            'last_name',
+            'last_name',
             'required',
             [
                 'required' => 'Nama Harus Diisi'
@@ -140,10 +149,10 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
 
-            // $this->load->view('layout/home/header');
-            // $this->load->view('layout/home/topbar');
+            $this->load->view('layout/header');
+            // $this->load->view('layout/topbar');
             $this->load->view('auth/registration');
-            // $this->load->view('layout/home/footer');
+            $this->load->view('layout/footer');
         } else {
             date_default_timezone_set('Asia/Jakarta');
             $now = date('Y-m-d H:i:s');
