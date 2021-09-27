@@ -168,7 +168,7 @@ class Auth extends CI_Controller
             $this->db->insert('users', $data);
             $this->session->set_flashdata('users', '<div class="alert alert-success mt-2 mb-2" role="alert">
 			Registrasi users <strong> Berhasil! </strong> Silahkan Login </div>');
-            redirect('Masuk');
+            redirect('Auth');
             // redirect('auth');
         }
     }
@@ -190,7 +190,7 @@ class Auth extends CI_Controller
         $this->session->all_userdata();
         $this->session->set_flashdata('users', '<div class="alert alert-success mb-2 mt-2" role="alert">
         Anda Berhasil <strong>Logout </strong> </div>');
-        redirect('masuk');
+        redirect('Auth');
         // redirect('auth');
     }
 

@@ -6,14 +6,14 @@
         <div class="user-panel">
             <div class="image text-center"><img src="<?= base_url('assets') ?>/img/img1.jpg" class="img-circle" alt="User Image"> </div>
             <div class="info">
-                <p>Zulfikar Rofi</p>
+                <p></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
 
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">PERSONAL</li>
+            <li class="header">MENU</li>
             <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
@@ -28,6 +28,7 @@
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('#') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <!-- <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
@@ -36,6 +37,8 @@
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('#') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <!-- <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
                     <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
                     <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li> -->
@@ -164,7 +167,7 @@
         <div class="box">
             <!-- /.box-body -->
             <ul class="box-footer">
-                <a href="<?= base_url('kelas/index') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
+                <a href="<?= base_url('Auth/logout') ?>"> <i class="icon-logout"></i> <span>Log Out</span>
             </ul>
             <!-- box-footer -->
         </div>
