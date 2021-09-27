@@ -159,7 +159,8 @@ class Auth extends CI_Controller
             $data = [
                 'email' => htmlspecialchars($this->input->post('email')),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                'nama' => htmlspecialchars($this->input->post('nama')),
+                'first_name' => htmlspecialchars($this->input->post('first_name')),
+                'last_name' => htmlspecialchars($this->input->post('last_name')),
                 'role_id' => 2,
                 'is_active' => 1,
                 'created_date' => $now

@@ -30,7 +30,7 @@
                                     </div>
                                     <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name" autocomplete="off">
                                 </div>
-                                <?= form_error('nama', '<small class="text-danger">', '</small>') ?>
+                                <?= form_error('first_name', '<small class="text-danger">', '</small>') ?>
                             </div>
                             <div class="form-group mt-4">
                                 <label class="form-control-label">Last Name</label>
