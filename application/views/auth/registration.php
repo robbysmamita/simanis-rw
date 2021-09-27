@@ -72,7 +72,7 @@
 
 
                             <div class="form-group mb-0 text-center">
-                                <button class="btn btn-primary btn-block" type="submit"> Buat Akun
+                                <button class="btn btn-primary btn-block" <a href="<?= base_url('auth/index') ?> type=" submit"> Buat Akun </a>
                                 </button>
                             </div>
                         </form>
