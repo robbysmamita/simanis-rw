@@ -34,7 +34,7 @@
 <body class="hold-transition login-page sty1">
   <div class="row justify-content-center">
     <div class="col-xl-4 col-md-4 col-sm-8 col-12">
-      <?= $this->session->flashdata('akun') ?>
+      <?= $this->session->flashdata('users') ?>
       <div class="card mt-3">
         <div class="card-body p-0">
           <div class="row">

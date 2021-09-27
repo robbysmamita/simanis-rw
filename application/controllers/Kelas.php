@@ -48,7 +48,7 @@ class Kelas extends CI_Controller
             $this->load->view('layout/footer');
         } else {
             $this->Kelas_model->tambah();
-            $this->session->set_flashdata('kelas', 'Added');
+            $this->session->set_flashdata('kelas', 'Ditambahkan');
             redirect('kelas');
         }
     }
