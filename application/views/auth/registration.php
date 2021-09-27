@@ -70,7 +70,6 @@
                                 <?= form_error('password_confirm', '<small class="text-danger">', '</small>') ?>
                             </div>
 
-
                             <div class="form-group mb-0 text-center">
                                 <button class="btn btn-primary btn-block" type="submit"> Buat Akun
                                 </button>
