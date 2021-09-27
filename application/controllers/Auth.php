@@ -84,7 +84,7 @@ class Auth extends CI_Controller
         } else {
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
             <strong> Username Tidak Ada </strong> </div>');
-            redirect('masuk');
+            redirect('Auth');
             // redirect('auth');
         }
     }
