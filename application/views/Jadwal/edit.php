@@ -16,19 +16,34 @@
                 <form action="" method="post">
                     <h4 class="text-black">Edit Data Jadwal</h4>
                     <div class="form-group">
-                        <label class="control-label" for="jadwal">Jadwal</label>
-                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $jadwal['kode_jadwal'] ?>" aria-describedby="helpBlock2">
-
-                        <input type="text" class="form-control" name="jadwal" id="jadwal" value="<?= $jadwal['jadwal'] ?>" aria-describedby="helpBlock2">
-                        <?= form_error('jadwal', '<small class="text-danger">', '</small>') ?>
+                        <label class="control-label" for="kode_guru">Kode guru</label>
+                        <input type="text" class="form-control" name="kode_guru" id="Kode guru" aria-describedby="helpBlock2">
+                        <?= form_error('kode_guru', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="category">Jurusan</label>
-                        <select class="form-control" name="category" id="category">
-                            <option value="IPA">IPA</option>
-                            <option value="IPS">IPS</option>
-                        </select>
-                        <?= form_error('category', '<small class="text-danger">', '</small>') ?>
+                        <label class="control-label" for="kode_kelas">Kode kelas</label>
+                        <input type="text" class="form-control" name="kode_kelas" id="Kode kelas" aria-describedby="helpBlock2">
+                        <?= form_error('kode_kelas', '<small class="text-danger">', '</small>') ?>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="kode_mapel">Kode mapel</label>
+                        <input type="text" class="form-control" name="kode_mapel" id="Kode mapel" aria-describedby="helpBlock2">
+                        <?= form_error('kode_mapel', '<small class="text-danger">', '</small>') ?>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="mata_pelajaran">Mata pelajaran</label>
+                        <input type="text" class="form-control" name="mata_pelajaran" id="Mata pelajaran" aria-describedby="helpBlock2">
+                        <?= form_error('mata_pelajaran', '<small class="text-danger">', '</small>') ?>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="waktu_mulai">Mulai</label>
+                        <input type="date" class="form-control" name="waktu_mulai" id="Waktu mulai" aria-describedby="helpBlock2">
+                        <?= form_error('waktu_mulai', '<small class="text-danger">', '</small>') ?>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="waktu_akhir">Selesai</label>
+                        <input type="date" class="form-control" name="waktu_akhir" id="Waktu akhir" aria-describedby="helpBlock2">
+                        <?= form_error('waktu_akhir', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary float-right">Simpan</button>
