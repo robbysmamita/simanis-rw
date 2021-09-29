@@ -20,14 +20,18 @@
             <div class="card-body">
                 <h4 class="text-black">Data Jadwal</h4>
                 <p>Data Jadwal</p>
-                <a href="<?= base_url('Jadwal/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('jadwal/tambah') ?>" class="btn btn-primary">Add</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Jadwal</th>
-                                <th>Jurusan</th>
+                                <th>Hari</th>
+                                <th>Kode Kelas</th>
+                                <th>Kode Mapel</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Mulai</th>
+                                <th>Berakhir</th>
                                 <th>Form Action</th>
                             </tr>
                         </thead>
@@ -38,15 +42,19 @@
                             <?php foreach ($jadwal as $k) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $k['jadwal'] ?></td>
-                                    <td><?= $k['category'] ?></td>
+                                    <td><?= $k['nama_hari'] ?></td>
+                                    <td><?= $k['kode_kelas'] ?></td>
+                                    <td><?= $k['kode_mapel'] ?></td>
+                                    <td><?= $k['mata_pelajaran'] ?></td>
+                                    <td><?= $k['waktu_mulai'] ?></td>
+                                    <td><?= $k['waktu_akhir'] ?></td>
                                     <td>
-                                        <a class="btn btn-warning" href="<?= base_url('Jadwal/edit/') ?><?= $k['id'] ?>">Edit</a>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['id'] ?>"> Hapus</a>
+                                        <a class="btn btn-warning" href="<?= base_url('jadwal/edit/') ?><?= $k['kode_jadwal'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['kode_jadwal'] ?>"> Hapus</a>
                                     </td>
                                 </tr>
                                 <!-- Modal -->
-                                <div class="modal fade" id="modal_delete<?= $k['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="modal_delete<?= $k['kode_jadwal'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -59,9 +67,9 @@
                                                 Yakin ingin menghapus data ini <?= $k['jadwal'] ?> ?
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="<?= base_url('Jadwal/delete') ?>" method="POST">
+                                                <form action="<?= base_url('jadwal/delete') ?>" method="POST">
                                                     <!-- <input type="text" id="id_hapus"> -->
-                                                    <input type="hidden" name="id" value="<?= $k['id'] ?>">
+                                                    <input type="hidden" name="id" value="<?= $k['kode_jadwal'] ?>">
 
                                                     <button class="btn btn-danger">Hapus</button>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

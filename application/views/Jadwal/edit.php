@@ -17,7 +17,7 @@
                     <h4 class="text-black">Edit Data Jadwal</h4>
                     <div class="form-group">
                         <label class="control-label" for="jadwal">Jadwal</label>
-                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $jadwal['id'] ?>" aria-describedby="helpBlock2">
+                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $jadwal['kode_jadwal'] ?>" aria-describedby="helpBlock2">
 
                         <input type="text" class="form-control" name="jadwal" id="jadwal" value="<?= $jadwal['jadwal'] ?>" aria-describedby="helpBlock2">
                         <?= form_error('jadwal', '<small class="text-danger">', '</small>') ?>

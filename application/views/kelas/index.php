@@ -35,7 +35,7 @@
                             <?php
                             $no = 1
                             ?>
-                            <?php foreach ($kelas as $k) : ?>
+                            <?php foreach ($join as $k) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
