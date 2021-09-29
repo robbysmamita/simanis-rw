@@ -5,12 +5,12 @@ class Kelas_model extends CI_Model
     {
         return $this->db->get('kelas')->result_array();
     }
-    public function getByID($id)
+    public function getByID($kode_kelas)
     {
-        if ($id == NULL) {
+        if ($kode_kelas == NULL) {
             return $this->db->get('kelas')->result_array();
         } else {
-            return $this->db->get_where('kelas', ['id' => $id])->row_array();
+            return $this->db->get_where('kelas', ['kode_kelas' => $kode_kelas])->row_array();
         }
     }
 
@@ -24,18 +24,18 @@ class Kelas_model extends CI_Model
     }
     public function edit()
     {
-        $id = htmlspecialchars($this->input->post('id'));
+        $kode_kelas = htmlspecialchars($this->input->post('kode_kelas'));
         $data = [
             'kelas' => htmlspecialchars($this->input->post('kelas')),
             'category' => htmlspecialchars($this->input->post('category'))
         ];
-        $this->db->where('id', $id);
+        $this->db->where('kode_kelas', $kode_kelas);
         $this->db->update('kelas', $data);
     }
     public function delete()
     {
-        $id = htmlspecialchars($this->input->post('id'));
-        $this->db->where('id', $id);
+        $kode_kelas = htmlspecialchars($this->input->post('kode_kelas'));
+        $this->db->where('kode_kelas', $kode_kelas);
         $this->db->delete('kelas');
         // var_dump($this->db->last_query());
         // die;
