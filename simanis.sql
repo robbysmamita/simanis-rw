@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Sep 2021 pada 05.34
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Generation Time: Sep 29, 2021 at 05:08 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `absensi`
+-- Table structure for table `absensi`
 --
 
 CREATE TABLE `absensi` (
@@ -39,7 +39,7 @@ CREATE TABLE `absensi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -49,7 +49,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -59,39 +59,71 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `guru`
+-- Table structure for table `guru`
 --
 
 CREATE TABLE `guru` (
-  `id` int(11) NOT NULL,
+  `kode_guru` int(11) NOT NULL,
   `nama_guru` varchar(25) NOT NULL,
   `no_induk_guru` varchar(25) NOT NULL,
   `jenis_kelamin` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `guru`
+-- Dumping data for table `guru`
 --
 
-INSERT INTO `guru` (`id`, `nama_guru`, `no_induk_guru`, `jenis_kelamin`) VALUES
+INSERT INTO `guru` (`kode_guru`, `nama_guru`, `no_induk_guru`, `jenis_kelamin`) VALUES
 (5, 'Sujaya', '14257', 'Laki-Laki');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `jadwal`
 --
 
-CREATE TABLE `kelas` (
-  `id` int(11) NOT NULL,
-  `kelas` varchar(15) NOT NULL,
-  `category` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `jadwal` (
+  `kode_jadwal` varchar(11) NOT NULL,
+  `nama_hari` varchar(255) NOT NULL,
+  `kode_guru` int(11) NOT NULL,
+  `kode_kelas` varchar(11) NOT NULL,
+  `kode_mapel` varchar(11) NOT NULL,
+  `mata_pelajaran` varchar(255) NOT NULL,
+  `waktu_mulai` datetime NOT NULL,
+  `waktu_akhir` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jadwal`
+--
+
+INSERT INTO `jadwal` (`kode_jadwal`, `nama_hari`, `kode_guru`, `kode_kelas`, `kode_mapel`, `mata_pelajaran`, `waktu_mulai`, `waktu_akhir`) VALUES
+('1', 'Senin', 5, '1', '3', 'Bahasa Inggris', '2021-09-29 07:00:00', '2021-09-29 08:30:00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login_attempts`
+-- Table structure for table `kelas`
+--
+
+CREATE TABLE `kelas` (
+  `kode_kelas` varchar(11) NOT NULL,
+  `kelas` varchar(15) NOT NULL,
+  `category` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kelas`
+--
+
+INSERT INTO `kelas` (`kode_kelas`, `kelas`, `category`) VALUES
+('1', 'tes', 'tesss'),
+('2', 'tess', 'etsf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -104,26 +136,27 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mapel`
+-- Table structure for table `mapel`
 --
 
 CREATE TABLE `mapel` (
-  `id` int(11) NOT NULL,
-  `mata_pelajaran` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `kode_mapel` varchar(11) NOT NULL,
+  `mata_pelajaran` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mapel`
+-- Dumping data for table `mapel`
 --
 
-INSERT INTO `mapel` (`id`, `mata_pelajaran`) VALUES
-(1, 'Bahasa Inggris'),
-(2, 'Bahasa Jerman');
+INSERT INTO `mapel` (`kode_mapel`, `mata_pelajaran`) VALUES
+('3', 'Bahasa Inggris'),
+('4', 'Bahasa Jerman'),
+('5', 'Bahasa Arab');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -131,7 +164,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`version`) VALUES
@@ -140,7 +173,7 @@ INSERT INTO `migrations` (`version`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -156,18 +189,19 @@ CREATE TABLE `siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `siswa`
+-- Dumping data for table `siswa`
 --
 
 INSERT INTO `siswa` (`id`, `nama_siswa`, `no_induk_siswa`, `jenis_kelamin`, `alamat`, `no_telp`, `no_telp_orangtua`, `email`, `kelas_id`) VALUES
 (1, 'Dani Aditya', '12003846', 'Laki - Laki', 'Jl. Ketegan ', '085362718291', '082536427124', 'Daniaditya@gmail.com', NULL),
 (2, 'budi setiawan', '128529', 'Laki-Laki', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'budisetia@gmail.com', NULL),
-(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL);
+(3, 'Rina Andini', '91212048', 'Perempuan', 'Jl. Ketegan No. 35', '084293482161', '082328427381', 'rinaandi0192@gmail.com', NULL),
+(5, 'Rida', '126534', 'Perempuan', 'Jl. XVC', '08080808', '08080808', 'zxas@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tahun akademik`
+-- Table structure for table `tahun akademik`
 --
 
 CREATE TABLE `tahun akademik` (
@@ -179,7 +213,7 @@ CREATE TABLE `tahun akademik` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tes`
+-- Table structure for table `tes`
 --
 
 CREATE TABLE `tes` (
@@ -188,7 +222,7 @@ CREATE TABLE `tes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tes`
+-- Dumping data for table `tes`
 --
 
 INSERT INTO `tes` (`id`, `string`) VALUES
@@ -197,7 +231,7 @@ INSERT INTO `tes` (`id`, `string`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -223,7 +257,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
@@ -232,7 +266,7 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activ
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users_groups`
+-- Table structure for table `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -242,7 +276,7 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users_groups`
+-- Dumping data for table `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -254,61 +288,71 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 
 --
--- Indeks untuk tabel `absensi`
+-- Indexes for table `absensi`
 --
 ALTER TABLE `absensi`
   ADD PRIMARY KEY (`id_absensi`) USING BTREE;
 
 --
--- Indeks untuk tabel `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `guru`
+-- Indexes for table `guru`
 --
 ALTER TABLE `guru`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`kode_guru`) USING BTREE;
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `jadwal`
+--
+ALTER TABLE `jadwal`
+  ADD PRIMARY KEY (`kode_jadwal`),
+  ADD UNIQUE KEY `kode_guru` (`kode_guru`),
+  ADD UNIQUE KEY `kode_kelas` (`kode_kelas`),
+  ADD UNIQUE KEY `kode_mapel` (`kode_mapel`),
+  ADD UNIQUE KEY `mata_pelajaran` (`mata_pelajaran`);
+
+--
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`kode_kelas`) USING BTREE;
 
 --
--- Indeks untuk tabel `login_attempts`
+-- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mapel`
+-- Indexes for table `mapel`
 --
 ALTER TABLE `mapel`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`kode_mapel`);
 
 --
--- Indeks untuk tabel `siswa`
+-- Indexes for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indeks untuk tabel `tahun akademik`
+-- Indexes for table `tahun akademik`
 --
 ALTER TABLE `tahun akademik`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
--- Indeks untuk tabel `tes`
+-- Indexes for table `tes`
 --
 ALTER TABLE `tes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -318,77 +362,65 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `remember_selector` (`remember_selector`);
 
 --
--- Indeks untuk tabel `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `absensi`
+-- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
   MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `guru`
+-- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `kode_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
---
-ALTER TABLE `kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `login_attempts`
+-- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `mapel`
---
-ALTER TABLE `mapel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `siswa`
+-- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tahun akademik`
+-- AUTO_INCREMENT for table `tahun akademik`
 --
 ALTER TABLE `tahun akademik`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tes`
+-- AUTO_INCREMENT for table `tes`
 --
 ALTER TABLE `tes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
