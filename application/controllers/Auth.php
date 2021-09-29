@@ -39,7 +39,8 @@ class Auth extends CI_Controller
         );
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('layout/header');
+            $data['title'] = 'Login';
+            $this->load->view('layout/header', $data);
             // $this->load->view('layout/home/topbar');
             $this->load->view('auth/index');
             // $this->load->view('layout/home/footer');
@@ -84,7 +85,7 @@ class Auth extends CI_Controller
         } else {
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
             <strong> Username Tidak Ada </strong> </div>');
-            redirect('Auth');
+            redirect('auth');
             // redirect('auth');
         }
     }
@@ -152,7 +153,7 @@ class Auth extends CI_Controller
             $this->load->view('layout/header');
             // $this->load->view('layout/topbar');
             $this->load->view('auth/registration');
-            $this->load->view('layout/footer');
+            // $this->load->view('layout/footer');
         } else {
             date_default_timezone_set('Asia/Jakarta');
             $now = date('Y-m-d H:i:s');

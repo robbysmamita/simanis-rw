@@ -29,7 +29,7 @@
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
-                    <li><a href="<?= base_url('#') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <!-- <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
@@ -39,7 +39,7 @@
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
-                    <li><a href="<?= base_url('#') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <!-- <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
                     <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
                     <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li> -->
