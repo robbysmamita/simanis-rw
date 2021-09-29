@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data Kelas</h4>
                 <p>Data Kelas</p>
-                <a href="<?= base_url('kelas/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('kelas/tambah') ?>" class="btn btn-primary">Tambah</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
@@ -35,18 +35,18 @@
                             <?php
                             $no = 1
                             ?>
-                            <?php foreach ($join as $k) : ?>
+                            <?php foreach ($kelas as $k) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
                                     <td>
-                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') ?><?= $k['id'] ?>">Edit</a>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['id'] ?>"> Hapus</a>
+                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') ?><?= $k['kode_kelas'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['kode_kelas'] ?>"> Hapus</a>
                                     </td>
                                 </tr>
                                 <!-- Modal -->
-                                <div class="modal fade" id="modal_delete<?= $k['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="modal_delete<?= $k['kode_kelas'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -61,7 +61,7 @@
                                             <div class="modal-footer">
                                                 <form action="<?= base_url('kelas/delete') ?>" method="POST">
                                                     <!-- <input type="text" id="id_hapus"> -->
-                                                    <input type="hidden" name="id" value="<?= $k['id'] ?>">
+                                                    <input type="hidden" name="id" value="<?= $k['kode_kelas'] ?>">
 
                                                     <button class="btn btn-danger">Hapus</button>
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

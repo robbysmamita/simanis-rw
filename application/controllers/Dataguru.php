@@ -45,7 +45,6 @@ class Dataguru extends CI_Controller
                 'required' => 'Harus diisi'
             ]
         );
-
         if ($this->form_validation->run() == FALSE) {
             $data['title'] = 'Tambah Data guru';
             $this->load->view('layout/header', $data);
@@ -59,14 +58,14 @@ class Dataguru extends CI_Controller
             redirect('Dataguru');
         }
     }
-    public function edit($id)
+    public function edit($kode_guru)
     {
         $this->form_validation->set_rules(
-            'id',
-            'ID',
+            'kode_guru',
+            'kode guru',
             'required',
             [
-                'required' => 'ID'
+                'required' => 'kode_guru'
             ]
         );
         $this->form_validation->set_rules(
@@ -96,7 +95,7 @@ class Dataguru extends CI_Controller
         );
 
         if ($this->form_validation->run() == FALSE) {
-            $data['guru'] = $this->Dataguru_model->getById($id);
+            $data['guru'] = $this->Dataguru_model->getById($kode_guru);
             $data['title'] = 'Data guru';
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
@@ -109,12 +108,12 @@ class Dataguru extends CI_Controller
             redirect('Dataguru');
         }
     }
-    public function delete($id = null)
+    public function delete($kode_guru = null)
     {
-        // var_dump($this->db->last_query());
+    // var_dump($this->db->last_query())
         // var_dump($data['guru']);
         // die;
-        $this->Dataguru_model->delete($id);
+        $this->Dataguru_model->delete($kode_guru);
         $this->session->set_flashdata('guru', 'Dihapus');
         redirect('Dataguru');
     }

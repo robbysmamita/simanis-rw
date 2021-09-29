@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data Jadwal</h4>
                 <p>Data Jadwal</p>
-                <a href="<?= base_url('jadwal/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('jadwal/tambah') ?>" class="btn btn-primary">Tambah</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>

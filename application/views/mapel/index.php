@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data mapel</h4>
                 <p>Data mapel</p>
-                <a href="<?= base_url('mapel/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('mapel/tambah') ?>" class="btn btn-primary">Tambah</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
@@ -40,10 +40,10 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $s['mata_pelajaran'] ?></td>
                                     <td>
-                                        <a class="btn btn-warning" href="<?= base_url('mapel/edit/') . $s['id'] ?>">Edit</a>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['id'] ?>"> Hapus</a>
+                                        <a class="btn btn-warning" href="<?= base_url('mapel/edit/') . $s['kode_mapel'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['kode_mapel'] ?>"> Hapus</a>
                                     </td>
-                                    <div class="modal fade" id="modal_delete<?= $s['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="modal_delete<?= $s['kode_mapel'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -58,7 +58,7 @@
                                                 <div class="modal-footer">
                                                     <form action="<?= base_url('mapel/delete') ?>" method="POST">
                                                         <!-- <input type="text" id="id_hapus"> -->
-                                                        <input type="hidden" name="id" value="<?= $s['id'] ?>">
+                                                        <input type="hidden" name="id" value="<?= $s['kode_mapel'] ?>">
                                                         <button class="btn btn-danger">Hapus</button>
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                     </form>
