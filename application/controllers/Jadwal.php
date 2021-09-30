@@ -12,8 +12,9 @@ class Jadwal extends CI_Controller
     public function index()
     {
         $data['title'] = 'Data Jadwal';
-        $data['join'] = $this->model->getByKodeGuru($id);
-        $data['join'] = $this->model->getByKodeMapel($mata_pelajaran);
+        // $data['join'] = $this->model->getByKodeGuru($kode_guru);
+        // $data['join'] = $this->model->getByKodeMapel($mata_pelajaran);
+        $data['join'] = $this->Jadwal_model->tesjoin();
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar', $data);
         $this->load->view('layout/sidebar', $data);
