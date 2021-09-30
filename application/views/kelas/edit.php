@@ -17,7 +17,7 @@
                     <h4 class="text-black">Edit Data Kelas</h4>
                     <div class="form-group">
                         <label class="control-label" for="kelas">Kelas</label>
-                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $kelas['id'] ?>" aria-describedby="helpBlock2">
+                        <input type="hidden" class="form-control" name="kode_kelas" id="kode_kelas" value="<?= $kelas['kode_kelas'] ?>" aria-describedby="helpBlock2">
 
                         <input type="text" class="form-control" name="kelas" id="kelas" value="<?= $kelas['kelas'] ?>" aria-describedby="helpBlock2">
                         <?= form_error('kelas', '<small class="text-danger">', '</small>') ?>

@@ -80,8 +80,6 @@ class Jadwal extends CI_Controller
             ]
         );
         if ($this->form_validation->run() == FALSE) {
-            $data['active'] = "jadwal";
-            $this->load->model('Jadwal_model');
             $data['title'] = "Tambah Jadwal";
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
@@ -161,9 +159,6 @@ class Jadwal extends CI_Controller
             ]
         );
         if ($this->form_validation->run() == FALSE) {
-            $data['active'] = "jadwal";
-            $this->load->model('Jadwal_model');
-            $data['jadwal'] = $this->jadwal->get($kode_jadwal);
             $data['jadwal'] = $this->Jadwal_model->getByID($kode_jadwal);
             // var_dump($data['jadwal']);
             // die;

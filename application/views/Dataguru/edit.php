@@ -16,7 +16,7 @@
                 <form action="" method="post">
                     <h4 class="text-black">Edit Data Guru</h4>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $guru['id'] ?>" <label class="control-label" for="Nama_guru">Nama Guru</label>
+                        <input type="hidden" class="form-control" name="kode_guru" id="kode_guru" value="<?= $guru['kode_guru'] ?>" <label class="control-label" for="Nama_guru">Nama Guru</label>
                         <input type="text" class="form-control" name="nama_guru" id="nama_guru" value="<?= $guru['nama_guru'] ?>" aria-describedby="helpBlock2">
                         <?= form_error('nama_guru', '<small class="text-danger">', '</small>') ?>
                     </div>

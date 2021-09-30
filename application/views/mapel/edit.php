@@ -16,7 +16,7 @@
                 <form action="" method="post">
                     <h4 class="text-black">Edit Data Mata Pelajaran</h4>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" name="id" id="id" value="<?= $mapel['id'] ?>" <label class="control-label" for="mata_pelajaran">Mata Pelajaran</label>
+                        <input type="hidden" class="form-control" name="kode_mapel" id="kode_mapel" value="<?= $mapel['kode_mapel'] ?>" <label class="control-label" for="mata_pelajaran">Mata Pelajaran</label>
                         <input type="text" class="form-control" name="mata_pelajaran" id="mata_pelajaran" value="<?= $mapel['mata_pelajaran'] ?>" aria-describedby="helpBlock2">
                         <?= form_error('mata_pelajaran', '<small class="text-danger">', '</small>') ?>
                     </div>
