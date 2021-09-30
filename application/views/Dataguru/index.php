@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data Guru</h4>
                 <p>Data Guru</p>
-                <a href="<?= base_url('Dataguru/tambah') ?>" class="btn btn-primary">Add</a>
+                <a href="<?= base_url('Dataguru/tambah') ?>" class="btn btn-primary">Tambah</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
@@ -44,10 +44,10 @@
                                     <td><?= $s['no_induk_guru'] ?></td>
                                     <td><?= $s['jenis_kelamin'] ?></td>
                                     <td>
-                                        <a class="btn btn-warning" href="<?= base_url('dataguru/edit/') . $s['id'] ?>">Edit</a>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['id'] ?>"> Hapus</a>
+                                        <a class="btn btn-warning" href="<?= base_url('Dataguru/edit/') . $s['kode_guru'] ?>">Edit</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $s['kode_guru'] ?>"> Hapus</a>
                                     </td>
-                                    <div class="modal fade" id="modal_delete<?= $s['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal fade" id="modal_delete<?= $s['kode_guru'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -62,7 +62,7 @@
                                                 <div class="modal-footer">
                                                     <form action="<?= base_url('Dataguru/delete') ?>" method="POST">
                                                         <!-- <input type="text" id="id_hapus"> -->
-                                                        <input type="hidden" name="id" value="<?= $s['id'] ?>">
+                                                        <input type="hidden" name="id" value="<?= $s['kode_guru'] ?>">
                                                         <button class="btn btn-danger">Hapus</button>
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                     </form>

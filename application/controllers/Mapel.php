@@ -44,14 +44,14 @@ class Mapel extends CI_Controller
         }
         
     }
-    public function edit($id)
+    public function edit($kode_mapel)
     {
         $this->form_validation->set_rules(
-            'id',
-            'ID',
+            'kode_mapel',
+            'kode mapel',
             'required',
             [
-                'required' => 'ID'
+                'required' => 'kode_mapel'
             ]
         );
         $this->form_validation->set_rules(
@@ -64,7 +64,7 @@ class Mapel extends CI_Controller
         );
 
         if ($this->form_validation->run() == FALSE) {
-            $data['mapel'] = $this->Mapel_model->getById($id);
+            $data['mapel'] = $this->Mapel_model->getById($kode_mapel);
             $data['title'] = 'Data Mata Pelajaran';
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
@@ -77,12 +77,12 @@ class Mapel extends CI_Controller
             redirect('mapel');
         }
     }
-    public function delete($id = null)
+    public function delete($kode_mapel = null)
     {
         // var_dump($this->db->last_query());
         // var_dump($data['mapel']);
         // die;
-        $this->Mapel_model->delete($id);
+        $this->Mapel_model->delete($kode_mapel);
         $this->session->set_flashdata('mapel', 'Dihapus');
         redirect('mapel');
     }

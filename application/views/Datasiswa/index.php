@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data Siswa</h4>
                 <p>Data Kelas</p>
-                <a href="<?= base_url('Datasiswa/tambah') ?>" class="btn btn-success">Tambah</a>
+                <a href="<?= base_url('Datasiswa/tambah') ?>" class="btn btn-primary">Tambah</a>
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
