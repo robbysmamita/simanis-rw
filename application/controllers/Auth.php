@@ -149,8 +149,8 @@ class Auth extends CI_Controller
         );
 
         if ($this->form_validation->run() == FALSE) {
-
-            $this->load->view('layout/header');
+            $data['title'] = 'Registrasi';
+            $this->load->view('layout/header', $data);
             // $this->load->view('layout/topbar');
             $this->load->view('auth/registration');
             // $this->load->view('layout/footer');
