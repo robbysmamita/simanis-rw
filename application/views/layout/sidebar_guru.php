@@ -14,19 +14,37 @@
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MENU</li>
-            <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <!-- <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Absensi Siswa</a></li>
+                    <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
                     <li><a href="<?= base_url('kelas') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
                     <li><a href="<?= base_url('jadwal') ?>"><i class="fa fa-angle-right"></i>Data Jadwal</a></li>
                     <li><a href="<?= base_url('mapel') ?>"><i class="fa fa-angle-right"></i>Data Mata Pelajaran</a></li>
                     <li><a href="<?= base_url('Dataguru') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
                     <li><a href="<?= base_url('Datasiswa') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
                 </ul>
+            </li> -->
+            <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <!-- <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
+                    <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
+                    <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
+                    <li><a href="apps-contact-details.html"><i class="fa fa-angle-right"></i> Contact Detail</a></li> -->
+                </ul>
             </li>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <!-- <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
+                    <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
+                    <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li> -->
         </ul>
-
+        </li> -->
         <!-- <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="ui-cards.html" class="active"><i class="fa fa-angle-right"></i> Cards</a></li>
