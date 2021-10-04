@@ -14,7 +14,7 @@
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MENU</li>
-            <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Absensi Siswa</a></li>
