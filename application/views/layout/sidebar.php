@@ -8,6 +8,7 @@
             <div class="info">
                 <p></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <br><a href=""> Edit Profile </a>
             </div>
         </div>
 
