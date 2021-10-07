@@ -25,27 +25,27 @@
                     <li><a href="<?= base_url('Dataguru') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
                     <li><a href="<?= base_url('Datasiswa') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
                 </ul>
-            </li>
-            <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Guru</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            </li> -->
+            <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
-                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="<?= base_url('dashboard/index2') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('dashboard/index2') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
                     <!-- <li><a href="apps-support-ticket.html"><i class="fa fa-angle-right"></i> Support Ticket</a></li>
                     <li><a href="apps-contacts.html"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
                     <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact Grid</a></li>
                     <li><a href="apps-contact-details.html"><i class="fa fa-angle-right"></i> Contact Detail</a></li> -->
-        </ul>
-        </li> -->
-        <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-            <ul class="treeview-menu">
-                <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
-                <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
-                <!-- <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
-      auth              <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
-                    <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li> -->
-            </ul>
-        </li>
-        <!-- <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                </ul>
+            </li>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
+                    <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Jadwal Pelajaran</a></li>
+                    <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
+                    auth <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
+                    <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li>
+                </ul>
+            </li> -->
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="ui-cards.html" class="active"><i class="fa fa-angle-right"></i> Cards</a></li>
                     <li><a href="ui-user-card.html"><i class="fa fa-angle-right"></i> User Cards</a></li>
@@ -65,7 +65,7 @@
                     <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
                 </ul>
             </li> -->
-        <!-- <li class="header">FORMS, TABLE & WIDGETS</li>
+            <!-- <li class="header">FORMS, TABLE & WIDGETS</li>
             <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="form-elements.html"><i class="fa fa-angle-right"></i> Form Elements</a></li>
@@ -138,7 +138,7 @@
                     <li><a href="icon-flag.html"><i class="fa fa-angle-right"></i> Flag Icons</a></li>
                 </ul>
             </li> -->
-        <!-- <li class="treeview"> <a href="#"><span class="material-icon-outlined"></span></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <!-- <li class="treeview"> <a href="#"><span class="material-icon-outlined"></span></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                     <li class="treeview"> <a href="#"><i class="fa fa-angle-right"></i> Level One <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -155,7 +155,7 @@
                     <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
                 </ul>
             </li> -->
-        <!-- <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
+            <!-- <li class="treeview"> <a href="#"> <i class="icon-logout"></i> <span>Log Out</span>
                     <ul class="treeview-menu">
                         <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Log Out</a></li>
                     </ul>
