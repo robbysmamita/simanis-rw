@@ -39,6 +39,8 @@ class Auth extends CI_Controller
             // $this->load->view('layout/home/footer');
         } else {
             $this->private_login();
+            // var_dump($this->private_login);
+            // die;
         }
     }
 
