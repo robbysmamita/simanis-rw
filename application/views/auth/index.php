@@ -33,8 +33,8 @@
 
 <body class="hold-transition login-page sty1">
   <div class="row justify-content-center">
-    <div class="col-xl-4 col-md-4 col-sm-8 col-12">
-      <?= $this->session->flashdata('users') ?>
+    <div class="col-xl-4 col-md-4 col-sm-8 col-12 mt-4">
+      <?= $this->session->flashdata('akun') ?>
       <div class="card mt-3">
         <div class="card-body p-0">
           <div class="row">
@@ -52,7 +52,7 @@
                         <i data-feather="mail" class="icon-dual"></i>
                       </span>
                     </div>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan alamat email Anda disini" autocomplete="off">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan alamat email Anda disini" autocomplete="off">
                   </div>
                   <?= form_error('email', '<small class="text-danger">', '</small>') ?>
                 </div>
