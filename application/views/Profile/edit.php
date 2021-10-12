@@ -13,7 +13,7 @@
                     <div class="col-md-6">
                         <div class="form-group has-feedback">
                             <label class="control-label" for="users">First Name</label>
-                            <input class="form-control" name="first_name" id="first_name" value="<?= $users['first_name'] ?>" placeholder="First Name" type="text">
+                            <input class="form-control" name="first_name" id="first_name" value="<?= $users['first_name'] ?>" placeholder="First Name" type="text" aria-describedby="helpblock2">
                             <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                         </div>
                     </div>

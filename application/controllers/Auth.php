@@ -14,29 +14,13 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata('role_id') == 1) {
+        if ($this->session->userdata('role') == 'admin') {
             redirect('dashboard/index');
-        } elseif ($this->session->userdata('role_id') == 2) {
-            redirect('dashboard/index');
+        } elseif ($this->session->userdata('role') == 'siswa') {
+            redirect('dashboard/index1');
+        } elseif ($this->session->userdata('role') == 'guru') {
+            redirect('dashboard/index2');
         }
-
-        $this->form_validation->set_rules(
-            'email',
-            'Email',
-            'required',
-            [
-                'required' => 'Email Harus diisi'
-            ]
-        );
-
-        $this->form_validation->set_rules(
-            'password',
-            'Password',
-            'required',
-            [
-                'required' => 'Password Harus diisi'
-            ]
-        );
 
         if ($this->form_validation->run() == FALSE) {
             $data['title'] = 'Login';
@@ -46,58 +30,131 @@ class Auth extends CI_Controller
             // $this->load->view('layout/home/footer');
         } else {
             $this->private_login();
+            var_dump($this->private_login);
+            die;
         }
     }
 
     private function private_login()
     {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
-        $users = $this->db->get_where('users', ['email' => $email])->row_array();
 
-        if ($users) {
-            if ($users['is_active'] == 1) {
+        if ($this->session->userdata('role') == 'admin') {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $users = $this->db->get_where('users', ['email' => $email])->row_array();
+
+            if ($users) {
                 if (password_verify($password, $users['password'])) {
                     unset($users['password']);
                     $data = [
                         'email' => $users['email'],
                         'nama' => $users['nama'],
-                        'role_id' => $users['role_id'],
-                        'users_id' => $users['id']
+                        '$users_id' => $users['id']
                     ];
                     $this->session->set_userdata($data);
-
-                    if ($users['role_id'] == 1) {
-                        redirect('dashboard/index');
-                    } elseif ($users['role_id'] == 2) {
-                        redirect('dashboard/index1');
-                    } else {
-                        redirect('dashboard/index2');
-                    }
                 } else {
                     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
                     <strong> Username/Password salah </strong> </div>');
                     redirect('auth');
                 }
-            } else {
-                $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-                <strong> Username Tidak Aktif, Hubungi Admin!  </strong> </div>');
-                redirect('auth');
             }
-        } else {
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
             <strong> Username Tidak Ada </strong> </div>');
             redirect('auth');
-            // redirect('auth');
+        } elseif ($this->session->userdata('role') == 'siswa') {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $siswa = $this->db->get_where('siswa', ['email' => $email])->row_array();
+            if ($siswa) {
+                if (password_verify($password, $siswa['password'])) {
+                    unset($users['password']);
+                    $data = [
+                        'email' => $siswa['email'],
+                        'nama' => $siswa['nama'],
+                        '$siswa_id' => $siswa['id']
+                    ];
+                    $this->session->set_userdata($data);
+                } else {
+                    $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+                    <strong> Username/Password salah </strong> </div>');
+                    redirect('auth');
+                }
+            }
+            $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+            <strong> Username Tidak Ada </strong> </div>');
+            redirect('auth');
+        } elseif ($this->session->userdata('role') == 'guru') {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $guru = $this->db->get_where('guru', ['email' => $email])->row_array();
+            if ($guru) {
+                if (password_verify($password, $guru['password'])) {
+                    unset($guru['password']);
+                    $data = [
+                        'email' => $guru['email'],
+                        'nama' => $guru['nama'],
+                        '$kode_guru' => $guru['kode_guru']
+                    ];
+                    $this->session->set_userdata($data);
+                } else {
+                    $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+                    <strong> Username/Password salah </strong> </div>');
+                    redirect('auth');
+                }
+            }
+            $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+            <strong> Username Tidak Ada </strong> </div>');
+            redirect('auth');
         }
+        // $email = $this->input->post('email');
+        // $password = $this->input->post('password');
+        // $users = $this->db->get_where('users', ['email' => $email])->row_array();
+
+        // if ($users) {
+        //     if ($users['is_active'] == 1) {
+        //         if (password_verify($password, $users['password'])) {
+        //             unset($users['password']);
+        //             $data = [
+        //                 'email' => $users['email'],
+        //                 'nama' => $users['nama'],
+        //                 'role_id' => $users['role_id'],
+        //                 'users_id' => $users['id']
+        //             ];
+        //             $this->session->set_userdata($data);
+
+        //             if ($users['role_id'] == 'admin') {
+        //                 redirect('dashboard/index');
+        //             } elseif ($users['role_id'] == 'siswa') {
+        //                 redirect('dashboard/index1');
+        //             } else {
+        //                 redirect('dashboard/index2');
+        //             }
+        //         } else {
+        //             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+        //             <strong> Username/Password salah </strong> </div>');
+        //             redirect('auth');
+        //         }
+        //     } else {
+        //         $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+        //         <strong> Username Tidak Aktif, Hubungi Admin!  </strong> </div>');
+        //         redirect('auth');
+        //     }
+        // } else {
+        //     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
+        //     <strong> Username Tidak Ada </strong> </div>');
+        //     redirect('auth');
+        //     // redirect('auth');
+        // }
     }
 
     public function registration()
     {
-        if ($this->session->userdata('role_id') == 1) {
+        if ($this->session->userdata('role_id') == 'admin') {
             redirect('admin/dashboard');
-        } elseif ($this->session->userdata('role_id') == 2) {
+        } elseif ($this->session->userdata('role_id') == 'siswa') {
             redirect('dashboard');
+        } else {
+            redirect('dashboard/index');
         }
         $this->form_validation->set_rules(
             'email',
@@ -164,7 +221,7 @@ class Auth extends CI_Controller
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'first_name' => htmlspecialchars($this->input->post('first_name')),
                 'last_name' => htmlspecialchars($this->input->post('last_name')),
-                'role_id' => 2,
+                'role_id' => 'siswa',
                 'is_active' => 1,
                 'created_date' => $now
             ];
