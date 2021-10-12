@@ -35,10 +35,10 @@ class Auth extends CI_Controller
         }
     }
 
-    private function private_login()
+    private function private_login($email, $password)
     {
 
-        if ($this->session->userdata('role') == 'admin') {
+        if ($this->Auth_model->login_admin($email, $password) == TRUE) {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $users = $this->db->get_where('users', ['email' => $email])->row_array();
@@ -54,14 +54,14 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                 } else {
                     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-                    <strong> Username/Password salah </strong> </div>');
+                    <strong> email/Password salah </strong> </div>');
                     redirect('auth');
                 }
             }
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-            <strong> Username Tidak Ada </strong> </div>');
+            <strong> email Tidak Ada </strong> </div>');
             redirect('auth');
-        } elseif ($this->session->userdata('role') == 'siswa') {
+        } elseif ($this->Auth_model->login_siswa($email, $password) == TRUE) {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $siswa = $this->db->get_where('siswa', ['email' => $email])->row_array();
@@ -76,12 +76,12 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                 } else {
                     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-                    <strong> Username/Password salah </strong> </div>');
+                    <strong> email/Password salah </strong> </div>');
                     redirect('auth');
                 }
             }
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-            <strong> Username Tidak Ada </strong> </div>');
+            <strong> email Tidak Ada </strong> </div>');
             redirect('auth');
         } elseif ($this->session->userdata('role') == 'guru') {
             $email = $this->input->post('email');
@@ -98,12 +98,12 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                 } else {
                     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-                    <strong> Username/Password salah </strong> </div>');
+                    <strong> email/Password salah </strong> </div>');
                     redirect('auth');
                 }
             }
             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-            <strong> Username Tidak Ada </strong> </div>');
+            <strong> email Tidak Ada </strong> </div>');
             redirect('auth');
         }
         // $email = $this->input->post('email');
@@ -131,17 +131,17 @@ class Auth extends CI_Controller
         //             }
         //         } else {
         //             $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-        //             <strong> Username/Password salah </strong> </div>');
+        //             <strong> email/Password salah </strong> </div>');
         //             redirect('auth');
         //         }
         //     } else {
         //         $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-        //         <strong> Username Tidak Aktif, Hubungi Admin!  </strong> </div>');
+        //         <strong> email Tidak Aktif, Hubungi Admin!  </strong> </div>');
         //         redirect('auth');
         //     }
         // } else {
         //     $this->session->set_flashdata('users', '<div class="alert alert-danger mt-2 mb-2" role="alert">
-        //     <strong> Username Tidak Ada </strong> </div>');
+        //     <strong> email Tidak Ada </strong> </div>');
         //     redirect('auth');
         //     // redirect('auth');
         // }
