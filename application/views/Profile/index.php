@@ -54,12 +54,12 @@
                                 <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                             </div>
                         </div> -->
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <div class="form-group has-feedback">
                                 <label class="control-label">Bio</label>
                                 <textarea class="form-control" id="placeTextarea" rows="3" placeholder="Bio"></textarea>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="col-md-12">
                             <div class="form-group has-feedback">
                                 <label class="custom-file center-block block">
@@ -67,10 +67,10 @@
                                     <span class="custom-file-control"></span> </label>
                             </div>
                         </div> -->
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
 
             </div>
