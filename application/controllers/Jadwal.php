@@ -184,5 +184,3 @@ class Jadwal extends CI_Controller
         redirect('jadwal');
     }
 }
-	
-
