@@ -10,7 +10,6 @@
     </div>
 
     <!-- Main content -->
-
     <?php if ($this->session->userdata('role_id') == 1) : ?>
         <div class="content">
             <div class="row">
@@ -394,7 +393,6 @@
             <!-- /.row -->
         </div>
     <?php elseif ($this->session->userdata('role_id') == 2) : ?>
-
     <?php elseif ($this->session->userdata('role_id') == 3) : ?>
         <form action="" method="post">
 
