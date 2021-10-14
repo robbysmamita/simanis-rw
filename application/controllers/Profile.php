@@ -8,89 +8,66 @@ class Profile extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('Profile_model');
     }
-    public function index()
-    {
-        if ($this->session->userdata('role_id' == 'admin')) {
-            $data['title'] = 'Edit Profile';
-            $this->load->view('layout/topbar');
-            $this->load->view('layout/header', $data);
-            $this->load->view('layout/sidebar', $data);
-            $this->load->view('Profile/index');
-            $this->load->view('layout/footer');
-        } elseif ($this->session->userdata('role_id' == 'siswa')) {
-            $data['title'] = 'Edit Profile';
-            $this->load->view('layout/topbar');
-            $this->load->view('layout/header', $data);
-            $this->load->view('layout/sidebar', $data);
-            $this->load->view('Profile/index');
-            $this->load->view('layout/footer');
-        } else {
-            $data['title'] = 'Edit Profile';
-            $this->load->view('layout/topbar');
-            $this->load->view('layout/header', $data);
-            $this->load->view('layout/sidebar', $data);
-            $this->load->view('Profile/index');
-            $this->load->view('layout/footer');
-        }
-        $data['sess'] = $this->session->userdata('email');
-        // var_dump($data['sess']);
-        // die;
-
+    public function profile(){
+        $data['Akun'] = $this->Profile_model->getAllDataUser();
+        $data['title'] = 'Profile';
+        $this->load->view('layout/topbar', $data);
+        $this->load->view('layout/header'. $data);
+        $this->load->view('layout/sidebar', $data);
+        $this->load->view('Profile/Edit', $data);
+        $this->load->view('layout/footer');
     }
-    public function edit($users_id)
+    public function edit()
     {
         $this->form_validation->set_rules(
-            'users_id',
-            'users_id',
-            'required',
-            [
-                'required' => 'Harus Diisi!!'
-            ]
-        );
-        $this->form_validation->set_rules(
-            'first_name',
+            'First_name',
             'first_name',
             'required',
             [
-                'required' => 'Harus Diisi!!'
+                'required' => 'Harus Diisi'
             ]
-        );
+            );
         $this->form_validation->set_rules(
-            'last_name',
+            'Last_name',
             'last_name',
             'required',
             [
-                'required' => 'Harus Diisi!!'
+                'required' => 'Harus Diisi'
             ]
-        );
+            );
         $this->form_validation->set_rules(
             'email',
             'email',
             'required',
             [
-                'required' => 'Harus Diisi!!'
+                'required' => 'Harus Diisi'
             ]
-        );
+            );
         $this->form_validation->set_rules(
             'no_telp',
             'no_telp',
             'required',
             [
-                'required' => 'Harus Diisi!!'
+                'required' => 'Harus Diisi'
+            ]
+            );
+        $this->form_validation->set_rules(
+            'alamat',
+            'alamat',
+            'required',
+            [
+                'required' => 'Harus Diisi'
             ]
         );
-        if ($this->form_validation->run() == FALSE) {
-            $data['users'] = $this->Profile_model->getByID($users_id);
-            $data['title'] = 'Edit Profile';
-            $this->load->view('layout/header', $data);
-            $this->load->view('layout/topbar');
-            $this->load->view('layout/sidebar', $data);
-            $this->load->view('Profile/index');
-            $this->load->view('layout/footer');
-        } else {
-            $this->Profile_model->edit();
-            $this->session->set_flashdata('users', 'Dirubah');
-            redirect('Profile');
-        }
+        
+        $id = $this->session->userdata('id');
+        $data = array(
+            'first_name'    => $this->input->post('first_name'),
+            'last_name'     => $this->input->post('last_name'),
+            'email'         => $this->input->post('email'),
+            'no_telp'       => $this->input->post('no_telp'),
+            'alamat'        => $this->input->post('alamat'),
+        );
+        if($this->library->form_validation == TRUE)
     }
 }
