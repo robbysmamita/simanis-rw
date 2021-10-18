@@ -8,11 +8,12 @@ class Profile extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('Profile_model');
     }
-    public function profile(){
+    public function index()
+    {
         $data['Akun'] = $this->Profile_model->getAllDataUser();
         $data['title'] = 'Profile';
         $this->load->view('layout/topbar', $data);
-        $this->load->view('layout/header'. $data);
+        $this->load->view('layout/header', $data);
         $this->load->view('layout/sidebar', $data);
         $this->load->view('Profile/Edit', $data);
         $this->load->view('layout/footer');
@@ -26,7 +27,7 @@ class Profile extends CI_Controller
             [
                 'required' => 'Harus Diisi'
             ]
-            );
+        );
         $this->form_validation->set_rules(
             'Last_name',
             'last_name',
@@ -34,7 +35,7 @@ class Profile extends CI_Controller
             [
                 'required' => 'Harus Diisi'
             ]
-            );
+        );
         $this->form_validation->set_rules(
             'email',
             'email',
@@ -42,7 +43,7 @@ class Profile extends CI_Controller
             [
                 'required' => 'Harus Diisi'
             ]
-            );
+        );
         $this->form_validation->set_rules(
             'no_telp',
             'no_telp',
@@ -50,7 +51,7 @@ class Profile extends CI_Controller
             [
                 'required' => 'Harus Diisi'
             ]
-            );
+        );
         $this->form_validation->set_rules(
             'alamat',
             'alamat',
@@ -59,7 +60,7 @@ class Profile extends CI_Controller
                 'required' => 'Harus Diisi'
             ]
         );
-        
+
         $id = $this->session->userdata('id');
         $data = array(
             'first_name'    => $this->input->post('first_name'),
@@ -68,6 +69,18 @@ class Profile extends CI_Controller
             'no_telp'       => $this->input->post('no_telp'),
             'alamat'        => $this->input->post('alamat'),
         );
-        if($this->library->form_validation == TRUE)
+        if ($this->library->form_validation == FALSE) {
+            $data['title'] = 'Edit Profile';
+            $data['user'] = $this->Profile_model->getByID();
+            $this->load->view('layout/header', $data);
+            $this->load->view('layout/topbar', $data);
+            $this->load->view('layout/sidebar', $data);
+            $this->load->view('Profile/edit', $data);
+            $this->load->view('layout/footer');
+        } else {
+            $this->Profile_model->edit();
+            $this->session->flashdata('users', 'Data telah diganti');
+            redirect('Profile');
+        }
     }
 }

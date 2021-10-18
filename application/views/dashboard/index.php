@@ -10,7 +10,7 @@
     </div>
 
     <!-- Main content -->
-    <?php if ($this->session->userdata('role_id') == 1) : ?>
+    <?php if ($this->session->userdata('role_id') == 'admin') : ?>
         <div class="content">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
@@ -24,11 +24,11 @@
                             <div class="info-widget-text row">
                                 <div class="col-sm-6 pull-left"><span>Hello, <?= $this->session->userdata('username') ?></span></div>
                                 <div class="col-sm-6 pull-right text-right text-blue f-25">
-                                    <?php if ($this->session->userdata('role_id') == 1) : ?>
+                                    <?php if ($this->session->userdata('role_id') == 'admin') : ?>
                                         Administrator
-                                    <?php elseif ($this->session->userdata('role_id') == 2) : ?>
+                                    <?php elseif ($this->session->userdata('role_id') == 'guru') : ?>
                                         Guru
-                                    <?php elseif ($this->session->userdata('role_id') == 3) : ?>
+                                    <?php elseif ($this->session->userdata('role_id') == 'siswa') : ?>
                                         Siswa
                                     <?php endif ?>
                                 </div>

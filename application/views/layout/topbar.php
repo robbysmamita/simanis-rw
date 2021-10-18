@@ -106,7 +106,7 @@
                             <ul class="dropdown-menu">
                                 <li class="user-header">
                                     <div class="pull-left user-img"><img src="<?= base_url('assets') ?>/img/img1.jpg" class="img-responsive img-circle" alt="User"></div>
-                                    <p class="text-left">Nama Pengguna <small>Status</small> </p>
+                                    <p class="text-left"><small>Status</small> </p>
                                 </li>
                                 <li><a href="<?= base_url('Profile') ?>"><i class="icon-profile-male"></i> My Profile</a></li>
                                 <!-- <li><a href="#"><i class="icon-wallet"></i> My Balance</a></li> -->
