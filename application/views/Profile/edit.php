@@ -16,8 +16,10 @@
                             <div class="col-md-6">
                                 <div class="form-group has-feedback">
                                     <label class="control-label">First Name</label>
-                                    <input class="form-control" placeholder="First Name" value="$users" type="text">
+                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?= $data['first_name'] ?>" type="text">
                                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
+                                    <?= form_error('first_name', '<small class="text-danger">', '</small>') ?>
+
                                 </div>
                             </div>
                             <div class="col-md-6">
