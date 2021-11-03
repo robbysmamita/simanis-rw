@@ -14,7 +14,7 @@ class Jadwal extends CI_Controller
 
     public function index()
     {
-        
+
         $data['title'] = 'Data Jadwal';
         $data['join'] = $this->Jadwal_model->tesjoin();
         // var_dump($data ['join']); die;
@@ -180,14 +180,17 @@ class Jadwal extends CI_Controller
             redirect('jadwal');
         }
     }
-    public function delete($kode_jadwal = null)
+    public function delete()
     {
-        
+
         // $data['active'] = "jadwal";
-		// $this->load->model('jadwal');
+        // $this->load->model('jadwal');
         // var_dump($kode_jadwal['jadwal']);
-        $this->Jadwal_model->delete($kode_jadwal);
-        $this->session->set_flashdata('jadwal', 'Dihapus');
+        $id = $this->input->post('id');
+        $this->db->where('kode_jadwal', $id);
+        $this->db->delete('jadwal');
+        // $this->Jadwal_model->delete($kode_jadwal);
+        // $this->session->set_flashdata('jadwal', 'Dihapus');
         redirect('jadwal');
     }
 }
