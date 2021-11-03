@@ -18,12 +18,11 @@
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li><a href="<?= base_url('Absensisiswa') ?>"><i class="fa fa-angle-right"></i>Absensi Siswa</a></li>
-                    <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li>
+                    <!-- <li class="active"><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i> Absensi Siswa</a></li> -->
                     <li><a href="<?= base_url('kelassiswa') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
                     <li><a href="<?= base_url('jadwalsiswa') ?>"><i class="fa fa-angle-right"></i>Data Jadwal</a></li>
                     <li><a href="<?= base_url('mapelsiswa') ?>"><i class="fa fa-angle-right"></i>Data Mata Pelajaran</a></li>
                     <li><a href="<?= base_url('Dataguru1') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
-                    <li><a href="<?= base_url('Datasiswa1') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
                 </ul>
             </li>
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>

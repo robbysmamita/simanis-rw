@@ -1,6 +1,6 @@
 <?php
 
-class Jadwal extends CI_Controller
+class Jadwalsiswa extends CI_Controller
 {
     public function __construct()
     {
@@ -20,8 +20,8 @@ class Jadwal extends CI_Controller
         // var_dump($data ['join']); die;
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar', $data);
-        $this->load->view('layout/sidebar', $data);
-        $this->load->view('jadwal/index', $data);
+        $this->load->view('layout/sidebar_siswa', $data);
+        $this->load->view('jadwal/index2', $data);
         $this->load->view('layout/footer');
     }
     public function tambah()
@@ -29,7 +29,6 @@ class Jadwal extends CI_Controller
         $data['guru'] = $this->Dataguru_model->getAllDataGuru();
         $data['kelas'] = $this->Kelas_model->getAllDataKelas();
         $data['mapel'] = $this->Mapel_model->getAllDataMapel();
-
         $this->form_validation->set_rules(
             'nama_hari',
             'nama hari',
@@ -90,20 +89,17 @@ class Jadwal extends CI_Controller
             $data['title'] = "Tambah Jadwal";
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
-            $this->load->view('layout/sidebar', $data);
+            $this->load->view('layout/sidebar_siswa', $data);
             $this->load->view('jadwal/tambah', $data);
             $this->load->view('layout/footer');
         } else {
             $this->Jadwal_model->tambah();
             $this->session->set_flashdata('jadwal', 'Ditambahkan');
-            redirect('jadwal');
+            redirect('jadwalsiswa');
         }
     }
     public function edit($kode_jadwal)
     {
-        $data['guru'] = $this->Dataguru_model->getAllDataGuru();
-        $data['kelas'] = $this->Kelas_model->getAllDataKelas();
-        $data['mapel'] = $this->Mapel_model->getAllDataMapel();
         $this->form_validation->set_rules(
             'kode_jadwal',
             'kode jadwal',
@@ -175,13 +171,13 @@ class Jadwal extends CI_Controller
             $data['title'] = "Edit jadwal";
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
-            $this->load->view('layout/sidebar', $data);
+            $this->load->view('layout/sidebar_siswa', $data);
             $this->load->view('jadwal/edit', $data);
             $this->load->view('layout/footer');
         } else {
             $this->Jadwal_model->edit();
             $this->session->set_flashdata('jadwal', 'Disimpan');
-            redirect('jadwal');
+            redirect('jadwalsiswa');
         }
     }
     public function delete()
@@ -195,6 +191,6 @@ class Jadwal extends CI_Controller
         $this->db->delete('jadwal');
         // $this->Jadwal_model->delete($kode_jadwal);
         // $this->session->set_flashdata('jadwal', 'Dihapus');
-        redirect('jadwal');
+        redirect('jadwalsiswa');
     }
 }

@@ -16,7 +16,7 @@ class Mapelsiswa extends CI_Controller
         $data['title'] = 'Mata Pelajaran';
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar', $data);
-        $this->load->view('layout/sidebar', $data);
+        $this->load->view('layout/sidebar_siswa', $data);
         $this->load->view('mapel/index2', $data);
         $this->load->view('layout/footer');
     }
@@ -34,7 +34,7 @@ class Mapelsiswa extends CI_Controller
             $data['title'] = "Tambah Mata Pelajaran";
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar');
-            $this->load->view('layout/sidebar');
+            $this->load->view('layout/sidebar_siswa');
             $this->load->view('mapel/tambah');
             $this->load->view('layout/footer');
         } else {
@@ -68,7 +68,7 @@ class Mapelsiswa extends CI_Controller
             $data['title'] = 'Data Mata Pelajaran';
             $this->load->view('layout/header', $data);
             $this->load->view('layout/topbar', $data);
-            $this->load->view('layout/sidebar', $data);
+            $this->load->view('layout/sidebar_siswa', $data);
             $this->load->view('mapel/edit', $data);
             $this->load->view('layout/header');
         } else {
