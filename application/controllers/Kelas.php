@@ -14,6 +14,7 @@ class Kelas extends CI_Controller
     {
         $data['title'] = "Kelas";
         $data['kelas'] = $this->Kelas_model->getAllDataKelas();
+        
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar');
         $this->load->view('layout/sidebar');

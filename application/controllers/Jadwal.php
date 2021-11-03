@@ -182,6 +182,7 @@ class Jadwal extends CI_Controller
     }
     public function delete($kode_jadwal = null)
     {
+        
         // $data['active'] = "jadwal";
 		// $this->load->model('jadwal');
         // var_dump($kode_jadwal['jadwal']);

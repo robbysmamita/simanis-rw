@@ -14,7 +14,7 @@
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MENU</li>
-            <!-- <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Admin</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('Dashboard') ?>"><i class="fa fa-angle-right"></i>Dashboard</a></li>
                     <li><a href="<?= base_url('Absensi') ?>"><i class="fa fa-angle-right"></i>Absensi Siswa</a></li>
@@ -22,10 +22,10 @@
                     <li><a href="<?= base_url('kelas') ?>"><i class="fa fa-angle-right"></i>Data Kelas</a></li>
                     <li><a href="<?= base_url('jadwal') ?>"><i class="fa fa-angle-right"></i>Data Jadwal</a></li>
                     <li><a href="<?= base_url('mapel') ?>"><i class="fa fa-angle-right"></i>Data Mata Pelajaran</a></li>
-                    <li><a href="<?= base_url('Dataguru') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
-                    <li><a href="<?= base_url('Datasiswa') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li>
+                    <!-- <li><a href="<?= base_url('Dataguru') ?>"><i class="fa fa-angle-right"></i>Data Guru</a></li>
+                    <li><a href="<?= base_url('Datasiswa') ?>"><i class="fa fa-angle-right"></i>Data Siswa</a></li> -->
                 </ul>
-            </li> -->
+            </li>
             <li class="treeview"> <a href="#"> <i class="icon-home"></i> <span>Siswa</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
                 <ul class="treeview-menu">
                     <li><a href="<?= base_url('dashboard/index2') ?>"><i class="fa fa-angle-right"></i> Absensi</a></li>
