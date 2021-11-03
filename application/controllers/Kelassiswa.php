@@ -13,7 +13,7 @@ class Kelassiswa extends CI_Controller
     public function index()
     {
         $data['title'] = "Kelas";
-        $data['kelassiswa'] = $this->Kelas_model->getAllDataKelas();
+        $data['kelas'] = $this->Kelas_model->getAllDataKelas();
         
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar');
@@ -81,7 +81,7 @@ class Kelassiswa extends CI_Controller
             ]
         );
         if ($this->form_validation->run() == FALSE) {
-            $data['kelassiswa'] = $this->Kelas_model->getByID($kode_kelas);
+            $data['kelas'] = $this->Kelas_model->getByID($kode_kelas);
             // var_dump($data['kelas']);
             // die;
             $data['title'] = "Edit Kelas";

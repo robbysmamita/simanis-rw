@@ -35,7 +35,7 @@
                             <?php
                             $no = 1
                             ?>
-                            <?php foreach ($kelassiswa as $k) : ?>
+                            <?php foreach ($kelas as $k) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
