@@ -14,15 +14,24 @@
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 m-b-3">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="m-b-1"> <i class="icon-facebook f-30 text-blue"></i> <span class="pull-right text-muted">Likes</span> </div>
-                        <div class="info-widget-text row">
-                            <div class="col-sm-6 pull-left"><span>Facebook</span></div>
-                            <div class="col-sm-6 pull-right text-right text-blue f-25">3,500</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="card-body">
+													<div class="row">
+														<div class="col-5">
+															<div class="icon-big text-center">
+																<i class="flaticon-users"></i>
+															</div>
+														</div>
+														<?php foreach ($kelas as $k) :?>
+														
+														
+																
+                                                        <h4><?php  echo $k['kelas'] ?></h4>
+                                                <?php endforeach; ?>
+															</div>
+														</div>
+													</div>
+												</div>
+                    
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 m-b-3">
                 <div class="card">
                     <div class="card-body">
