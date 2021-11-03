@@ -392,8 +392,8 @@
             </div>
             <!-- /.row -->
         </div>
-    <?php elseif ($this->session->userdata('role_id') == 2) : ?>
-    <?php elseif ($this->session->userdata('role_id') == 3) : ?>
+    <?php elseif ($this->session->userdata('role_id') == 'guru') : ?>
+    <?php elseif ($this->session->userdata('role_id') == 'siswa') : ?>
         <form action="" method="post">
 
         </form>

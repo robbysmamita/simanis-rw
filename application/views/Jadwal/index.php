@@ -29,7 +29,6 @@
                                 <th>Hari</th>
                                 <th>Kode Guru</th>
                                 <th>Kode Kelas</th>
-                                <th>Kode Mapel</th>
                                 <th>Mata Pelajaran</th>
                                 <th>Mulai</th>
                                 <th>Berakhir</th>
@@ -44,9 +43,8 @@
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['nama_hari'] ?></td>
-                                    <td><?= $k['kode_guru'] ?></td>
-                                    <td><?= $k['kode_kelas'] ?></td>
-                                    <td><?= $k['kode_mapel'] ?></td>
+                                    <td><?= $k['nama_guru']  ?></td>
+                                    <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['mata_pelajaran'] ?></td>
                                     <td><?= $k['waktu_mulai'] ?></td>
                                     <td><?= $k['waktu_akhir'] ?></td>
@@ -60,13 +58,13 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $k['kelas_kode'] ?> </h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Hapus Data <?= $k['kode_jadwal'] ?> </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Yakin ingin menghapus data ini <?= $k['kelas_kode'] ?> ?
+                                                Yakin ingin menghapus data ini <?= $k['kode_jadwal'] ?> ?
                                             </div>
                                             <div class="modal-footer">
                                                 <form action="<?= base_url('jadwal/delete') ?>" method="POST">

@@ -7,14 +7,17 @@ class Jadwal extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Jadwal_model');
+        $this->load->model('Dataguru_model');
+        $this->load->model('Kelas_model');
+        $this->load->model('Mapel_model');
     }
 
     public function index()
     {
+        
         $data['title'] = 'Data Jadwal';
-        // $data['join'] = $this->model->getByKodeGuru($kode_guru);
-        // $data['join'] = $this->model->getByKodeMapel($mata_pelajaran);
         $data['join'] = $this->Jadwal_model->tesjoin();
+        // var_dump($data ['join']); die;
         $this->load->view('layout/header', $data);
         $this->load->view('layout/topbar', $data);
         $this->load->view('layout/sidebar', $data);
@@ -23,6 +26,9 @@ class Jadwal extends CI_Controller
     }
     public function tambah()
     {
+        $data['guru'] = $this->Dataguru_model->getAllDataGuru();
+        $data['kelas'] = $this->Kelas_model->getAllDataKelas();
+        $data['mapel'] = $this->Mapel_model->getAllDataMapel();
         $this->form_validation->set_rules(
             'nama_hari',
             'nama hari',
@@ -55,14 +61,14 @@ class Jadwal extends CI_Controller
                 'required' => 'Harus diisi'
             ]
         );
-        $this->form_validation->set_rules(
-            'mata_pelajaran',
-            'mata pelajaram',
-            'required',
-            [
-                'required' => 'Harus diisi'
-            ]
-        );
+        // $this->form_validation->set_rules(
+        //     'mata_pelajaran',
+        //     'mata pelajaram',
+        //     'required',
+        //     [
+        //         'required' => 'Harus diisi'
+        //     ]
+        // );
         $this->form_validation->set_rules(
             'waktu_mulai',
             'waktu mulai',

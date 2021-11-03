@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $this->form_validation->set_rules(
-            'nama_siswa',
+            'nama_admin',
             'Nama',
             'required'
         );
@@ -26,9 +26,9 @@ class Dashboard extends CI_Controller
         } else {
             $data = [
                 'users_id' => $this->session->userdata('users_id'),
-                'nama_siswa' => htmlspecialchars($this->input->post('nama_siswa'))
+                'nama_siswa' => htmlspecialchars($this->input->post('nama_admin'))
             ];
-            $this->db->insert('siswa', $data);
+            $this->db->insert('admin', $data);
         }
     }
     public function index1()
@@ -42,11 +42,24 @@ class Dashboard extends CI_Controller
     }
     public function index2()
     {
-        $data['title'] = "Dashboard";
-        $this->load->view('layout/header', $data);
-        $this->load->view('layout/topbar');
-        $this->load->view('layout/sidebar_siswa');
-        $this->load->view('dashboard/index2');
-        $this->load->view('layout/footer');
+        $this->form_validation->set_rules(
+            'nama_siswa',
+            'Nama',
+            'required'
+        );
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = "Dashboard";
+            $this->load->view('layout/header', $data);
+            $this->load->view('layout/topbar');
+            $this->load->view('layout/sidebar_siswa');
+            $this->load->view('dashboard/index2');
+            $this->load->view('layout/footer');
+        } else {
+            $data = [
+                'users_id' => $this->session->userdata('users_id'),
+                'nama_siswa' => htmlspecialchars($this->input->post('nama_siswa'))
+            ];
+            $this->db->insert('siswa', $data);
+        }
     }
 }

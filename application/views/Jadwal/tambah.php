@@ -16,24 +16,37 @@
                 <form action="" method="post">
                     <h4 class="text-black">Tambah Data Jadwal</h4>
                     <div class="form-group">
+                        <label class="control-label" for="nama_hari">Nama Hari</label>
+                        <input type="text" class="form-control" name="nama_hari" id="nama hari" aria-describedby="helpBlock2">
+                        <?= form_error('nama_hari', '<small class="text-danger">', '</small>') ?>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label" for="kode_guru">Kode guru</label>
-                        <input type="text" class="form-control" name="kode_guru" id="Kode guru" aria-describedby="helpBlock2">
+                        <select class="form-control" name='kode_guru'>
+                            <?php foreach ($guru as $g): ?>
+                            <option value='<?php echo $g ['kode_guru']?>'><?php echo $g ['nama_guru']?> </option>
+                            <?php endforeach ?>
+                        </select>
+                       
                         <?= form_error('kode_guru', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="kode_kelas">Kode kelas</label>
-                        <input type="text" class="form-control" name="kode_kelas" id="Kode kelas" aria-describedby="helpBlock2">
+                    <label class="control-label" for="kode_kelas">Kode Kelas</label>
+                        <select class="form-control" name='kode_kelas'>
+                            <?php foreach ($kelas as $k): ?>
+                            <option value='<?php echo $k ['kode_kelas']?>'><?php echo $k ['kelas']?> </option>
+                            <?php endforeach ?>
+                        </select>
                         <?= form_error('kode_kelas', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="kode_mapel">Kode mapel</label>
-                        <input type="text" class="form-control" name="kode_mapel" id="Kode mapel" aria-describedby="helpBlock2">
+                    <label class="control-label" for="kode_mapel">Kode Mapel</label>
+                        <select class="form-control" name='kode_mapel'>
+                            <?php foreach ($mapel as $m): ?>
+                            <option value='<?php echo $m ['kode_mapel']?>'><?php echo $m ['mata_pelajaran']?> </option>
+                            <?php endforeach ?>
+                        </select>
                         <?= form_error('kode_mapel', '<small class="text-danger">', '</small>') ?>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="mata_pelajaran">Mata pelajaran</label>
-                        <input type="text" class="form-control" name="mata_pelajaran" id="Mata pelajaran" aria-describedby="helpBlock2">
-                        <?= form_error('mata_pelajaran', '<small class="text-danger">', '</small>') ?>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="waktu_mulai">Mulai</label>

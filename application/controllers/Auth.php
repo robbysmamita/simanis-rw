@@ -16,7 +16,7 @@ class Auth extends CI_Controller
     {
         $this->form_validation->set_rules(
             'email',
-            'Email / Username',
+        'Email / Username',
             'required',
             [
                 'required' => 'Harus diisi'
@@ -57,17 +57,24 @@ class Auth extends CI_Controller
                     $data = [
                         'email' => $akun['email'],
                         'username' => $akun['username'],
-                        'role_id' => $akun['role_id'],
-                        'users_id' => $akun['id']
+                        'role_id' => $akun['role_id'=='1'],
+                        'users_id' => $akun['id'=='1']
                     ];
                     $this->session->set_userdata($data);
-                    redirect('dashboard/index');
+                    if ($akun['role_id'] == 1) {
+						redirect('dashboard/index');
+					} elseif ($akun['role_id'] == 2){
+						redirect('dashboard/index1');
+					} else {
+                    redirect('dashboard/index2');
+                    }
                 } else {
                     $this->session->set_flashdata('akun', '<div class="alert alert-danger mt-2 mb-2" role="alert">
                     <strong> Username/Password salah </strong> </div>');
                     redirect('auth');
                 }
-            } else {
+            } 
+            else {
                 $this->session->set_flashdata('akun', '<div class="alert alert-danger mt-2 mb-2" role="alert">
                 <strong> Username Tidak Aktif, Hubungi Admin!  </strong> </div>');
                 redirect('auth');
@@ -78,6 +85,7 @@ class Auth extends CI_Controller
             redirect('auth');
             // redirect('auth');
         }
+        
     }
 
     public function registration()
@@ -148,7 +156,7 @@ class Auth extends CI_Controller
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'first_name' => htmlspecialchars($this->input->post('first_name')),
                 'last_name' => htmlspecialchars($this->input->post('last_name')),
-                'role_id' => 'siswa',
+                'role_id' => '3',
                 'is_active' => 1,
                 'created_date' => $now
             ];

@@ -5,7 +5,7 @@
         <h1>SIMANIS</h1>
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><i class="fa fa-angle-right"></i> Modern Dashboard</li>
+            <li><i class="fa fa-angle-right"></i> Coba Dashboard</li>
         </ol>
     </div>
 

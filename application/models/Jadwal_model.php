@@ -14,10 +14,10 @@ class Jadwal_model extends CI_Model
         }
     }
     // }
-    // public function getByKodeGuru($kode_guru){
-	// 	$query = $this->db->query("SELECT kode_jadwal, nama_hari, waktu_mulai, waktu_akhir, kode_kelas, kode_mapel FROM guru NATURAL JOIN kelas NATURAL JOIN jadwal WHERE kode_guru='".$kode_guru."'");
-	// 	return $query->result();
-	// }
+    public function getByKodeGuru($kode_guru){
+		$query = $this->db->query("SELECT kode_jadwal, nama_hari, waktu_mulai, waktu_akhir, kode_kelas, kode_mapel FROM guru NATURAL JOIN kelas NATURAL JOIN jadwal WHERE kode_guru='".$kode_guru."'");
+		return $query->result();
+	}
     // public function getByMapel($kode_mapel){
 	// 	$query = $this->db->query("SELECT kode_jadwal, nama_hari, waktu_mulai, waktu_akhir, kode_kelas, kode_mapel FROM mapel NATURAL JOIN kelas NATURAL JOIN jadwal WHERE kode_mapel = '".$kode_mapel."'");
 	// 	return $query->result();
@@ -30,6 +30,7 @@ class Jadwal_model extends CI_Model
         $this->db->join('kelas', 'kelas.kode_kelas = jadwal.kode_kelas');
         $this->db->join('guru', 'guru.kode_guru = jadwal.kode_guru');
         $this->db->join('mapel', 'mapel.kode_mapel = jadwal.kode_mapel');
+      
         // $query = $this->db->get();
         return $this->db->get()->result_array();
         // $this->db->last_query($query);die;
@@ -43,12 +44,12 @@ class Jadwal_model extends CI_Model
             'nama_hari' => htmlspecialchars($this->input->post('nama_hari')),
             'kode_guru' => htmlspecialchars($this->input->post('kode_guru')),
             'kode_kelas' => htmlspecialchars($this->input->post('kode_kelas')),
-            'kode_mapel' => htmlspecialchars($this->input->post('kode_mapel')),
-            'mata_pelajaran' => htmlspecialchars($this->input->post('mata_pelajaran')),               
+            'kode_mapel' => htmlspecialchars($this->input->post('kode_mapel')),            
             'waktu_mulai' => htmlspecialchars($this->input->post('waktu_mulai')),
             'waktu_akhir' => htmlspecialchars($this->input->post('waktu_akhir'))
         ];
         $this->db->insert('jadwal', $data);
+        // var_dump($this->db->last_query()); die;
     }
     public function edit()
     {
