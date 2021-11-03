@@ -11,8 +11,8 @@
 
     <!-- Main content -->
     <div class="content">
-        <?php if ($this->session->flashdata('kelas')) : ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert"> Data Telah <strong><?= $this->session->flashdata('kelas') ?></strong>
+        <?php if ($this->session->flashdata('kelassiswa')) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert"> Data Telah <strong><?= $this->session->flashdata('kelassiswa') ?></strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
             </div>
         <?php endif ?>
@@ -20,7 +20,7 @@
             <div class="card-body">
                 <h4 class="text-black">Data Kelas</h4>
                 <p>Data Kelas</p>
-                <a href="<?= base_url('kelas/tambah') ?>" class="btn btn-primary">Tambah</a>
+              
                 <div class="table-responsive">
                     <table id="datatablestab" class="table table-bordered table-hover" data-name="cool-table">
                         <thead>
@@ -35,15 +35,12 @@
                             <?php
                             $no = 1
                             ?>
-                            <?php foreach ($kelas as $k) : ?>
+                            <?php foreach ($kelassiswa as $k) : ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $k['kelas'] ?></td>
                                     <td><?= $k['category'] ?></td>
-                                    <!-- <td>
-                                        <a class="btn btn-warning" href="<?= base_url('kelas/edit/') ?><?= $k['kode_kelas'] ?>">Edit</a>
-                                        <a class="btn btn-danger" data-toggle="modal" data-target="#modal_delete<?= $k['kode_kelas'] ?>"> Hapus</a>
-                                    </td> -->
+                                    
                                 </tr>
                                 <!-- Modal -->
                                 <!-- <div class="modal fade" id="modal_delete<?= $k['kode_kelas'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -58,16 +55,7 @@
                                             <div class="modal-body">
                                                 Yakin ingin menghapus data ini <?= $k['kelas'] ?> ?
                                             </div>
-                                            <div class="modal-footer">
-                                                <form action="<?= base_url('kelas/delete') ?>" method="POST">
-                                                    <!-- <input type="text" id="id_hapus"> -->
-                                                    <input type="hidden" name="id" value="<?= $k['kode_kelas'] ?>">
-
-                                                    <button class="btn btn-danger">Hapus</button>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                </form>
-
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div> -->
